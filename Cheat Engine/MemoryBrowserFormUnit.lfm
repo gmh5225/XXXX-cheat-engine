@@ -1586,7 +1586,7 @@ object MemoryBrowser: TMemoryBrowser
         OnClick = EnumeratedllsandSymbols1Click
       end
       object MenuItem18: TMenuItem
-        Caption = 'Graphical memory view'
+        Caption = 'Graphical M4mory view'
         ImageIndex = 75
         OnClick = MenuItem18Click
       end

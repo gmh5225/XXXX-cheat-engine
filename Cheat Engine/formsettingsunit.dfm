@@ -970,7 +970,7 @@ object formSettings: TformSettings
           Top = 129
           Width = 572
           Height = 21
-          Caption = 'Use Global Debug routines'
+          Caption = 'Use Global D4bug Routines'
           Enabled = False
           TabOrder = 5
         end

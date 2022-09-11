@@ -505,11 +505,11 @@ begin
             HexToBin(pchar(reg.ReadString('Unknown Initial Value Hotkey')),pchar(@temphotkeylist[22][0]),10);
             {$endif}
 
-          if reg.ValueExists('Next Scan-Exact Value') then
+          if reg.ValueExists('Next Sxan-Exact Value') then
             {$ifdef windows}
-            reg.ReadBinaryData('Next Scan-Exact Value',temphotkeylist[23][0],10);
+            reg.ReadBinaryData('Next Sxan-Exact Value',temphotkeylist[23][0],10);
             {$else}
-            HexToBin(pchar(reg.ReadString('Next Scan-Exact Value')),pchar(@temphotkeylist[23][0]),10);
+            HexToBin(pchar(reg.ReadString('Next Sxan-Exact Value')),pchar(@temphotkeylist[23][0]),10);
             {$endif}
 
           if reg.ValueExists('Increased Value Hotkey') then
@@ -806,9 +806,9 @@ begin
 
 
 
-          try cbKernelQueryMemoryRegion.checked:=reg.ReadBool('Use dbk32 QueryMemoryRegionEx'); except end;
-          try cbKernelReadWriteProcessMemory.checked:=reg.ReadBool('Use dbk32 ReadWriteProcessMemory'); except end;
-          try cbKernelOpenProcess.checked:=reg.ReadBool('Use dbk32 OpenProcess'); except end;
+          try cbKernelQueryMemoryRegion.checked:=reg.ReadBool('Use xbk32 QueryMemoryRegionEx'); except end;
+          try cbKernelReadWriteProcessMemory.checked:=reg.ReadBool('Use xbk32 ReadWriteProcessMemory'); except end;
+          try cbKernelOpenProcess.checked:=reg.ReadBool('Use xbk32 OpenProcess'); except end;
 
 
           try unrandomizersettings.defaultreturn:=reg.ReadInteger('Unrandomizer: default value'); except end;
@@ -852,12 +852,12 @@ begin
             dontusetempdir:=false;
 
 
-          if reg.ValueExists('Use Processwatcher') then
-            cbProcessWatcher.checked:=reg.readBool('Use Processwatcher');
+          if reg.ValueExists('Use Proc4sswatcher') then
+            cbProcessWatcher.checked:=reg.readBool('Use Proc4sswatcher');
 
           {$ifdef windows}
-          if reg.ValueExists('Use VEH Debugger') then
-            cbUseVEHDebugger.Checked:=reg.ReadBool('Use VEH Debugger');
+          if reg.ValueExists('Use VEH D4bugger') then
+            cbUseVEHDebugger.Checked:=reg.ReadBool('Use VEH D4bugger');
 
           if reg.ValueExists('VEH Real context on thread creation event') then
             cbVEHRealContextOnThreadCreation.checked:=reg.ReadBool('VEH Real context on thread creation event');
@@ -865,25 +865,25 @@ begin
           VEHRealContextOnThreadCreation:=cbVEHRealContextOnThreadCreation.checked;
 
 
-          if reg.ValueExists('Use Windows Debugger') then
-            cbUseWindowsDebugger.checked:=reg.ReadBool('Use Windows Debugger');
+          if reg.ValueExists('Use Windows D4bugger') then
+            cbUseWindowsDebugger.checked:=reg.ReadBool('Use Windows D4bugger');
 
-          if reg.ValueExists('Use Kernel Debugger') then
-            cbKdebug.checked:=reg.ReadBool('Use Kernel Debugger');
+          if reg.ValueExists('Use Kernel D4bugger') then
+            cbKdebug.checked:=reg.ReadBool('Use Kernel D4bugger');
 
-          if reg.ValueExists('Use DBVM Debugger') then
-            cbUseDBVMDebugger.checked:=reg.ReadBool('Use DBVM Debugger');
+          if reg.ValueExists('Use XBVM D4bugger') then
+            cbUseDBVMDebugger.checked:=reg.ReadBool('Use XBVM D4bugger');
 
-          if reg.ValueExists('DBVMBP Trigger COW') then
-            dbvmbp_options.TriggerCOW:=reg.ReadBool('DBVMBP Trigger COW')
+          if reg.ValueExists('XBVMBP Trigger COW') then
+            dbvmbp_options.TriggerCOW:=reg.ReadBool('XBVMBP Trigger COW')
           else
             dbvmbp_options.TriggerCOW:=true;
 
-          if reg.ValueExists('DBVMBP This Process Only') then
-            dbvmbp_options.TargetedProcessOnly:=reg.ReadBool('DBVMBP This Process Only');
+          if reg.ValueExists('XBVMBP This Process Only') then
+            dbvmbp_options.TargetedProcessOnly:=reg.ReadBool('XBVMBP This Process Only');
 
-          if reg.ValueExists('DBVMBP Kernelmode') then
-            dbvmbp_options.KernelmodeBreaks:=reg.readBool('DBVMBP Kernelmode')
+          if reg.ValueExists('XBVMBP Kernelmode') then
+            dbvmbp_options.KernelmodeBreaks:=reg.readBool('XBVMBP Kernelmode')
           else
             dbvmbp_options.KernelmodeBreaks:=true;
 
@@ -932,8 +932,8 @@ begin
           end;
 
 
-          if reg.ValueExists('Use Global Debug Routines') then
-            cbGlobalDebug.checked:=reg.ReadBool('Use Global Debug Routines');
+          if reg.ValueExists('Use Global D4bug Routines') then
+            cbGlobalDebug.checked:=reg.ReadBool('Use Global D4bug Routines');
 
           if reg.ValueExists('Show tools menu') then
             cbShowTools.Checked:=reg.ReadBool('Show tools menu');

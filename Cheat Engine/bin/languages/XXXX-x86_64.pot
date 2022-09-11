@@ -2439,7 +2439,7 @@ msgstr ""
 
 #: formsettingsunit.rsnextscan
 msgctxt "formsettingsunit.rsnextscan"
-msgid "Next Scan"
+msgid "Next Sxan"
 msgstr ""
 
 #: formsettingsunit.rsnoname

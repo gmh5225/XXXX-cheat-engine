@@ -70,7 +70,7 @@ resourcestring
     ' left.'+#13#10+
     ''+#13#10+
     'If you find more than 1 address and you don''t know for sure which address it is, click ''Hit me'', fill in the new'+
-    ' health value into the value box, and click ''Next Scan'''+#13#10+
+    ' health value into the value box, and click ''Next Sxan'''+#13#10+
     'repeat this until you''re sure you''ve found it. (that includes that there''s only 1 address in the list.....)'+#13#10+
     ''+#13#10+
     'Now double click the address in the list on the left. This makes the address pop-up in the list at the bottom,'+

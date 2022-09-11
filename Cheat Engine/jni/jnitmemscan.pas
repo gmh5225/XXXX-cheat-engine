@@ -111,7 +111,7 @@ var
   ms: TJniMemscan;
   scanvalue1, scanvalue2, savedscanname: string;
 begin
-  log('Next scan');
+  log('Next Sxan');
   ms:=TJniMemscan(JObjectToTObject(penv, obj));
 
   scanvalue1:=jniGetString(penv, sv1);

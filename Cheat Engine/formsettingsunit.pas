@@ -446,7 +446,7 @@ resourcestring
   rsDouble = 'Double';
   rsText = 'Text';
   rsArrayOfByte = 'Array of byte';
-  rsNextScan = 'Next Scan';
+  rsNextScan = 'Next Sxan';
   rsToggleBetweenFirstLastScanCompare =
     'Toggle between first/last scan compare';
   rsUndoLastScan = 'Undo last scan';
@@ -786,7 +786,7 @@ begin
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('New Scan Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[20][0],10){$ifndef windows}){$endif};
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('New Scan-Exact Value',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[21][0],10){$ifndef windows}){$endif};
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Unknown Initial Value Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[22][0],10){$ifndef windows}){$endif};
-          reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Next Scan-Exact Value',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[23][0],10){$ifndef windows}){$endif};
+          reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Next Sxan-Exact Value',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[23][0],10){$ifndef windows}){$endif};
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Increased Value Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[24][0],10){$ifndef windows}){$endif};
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Decreased Value Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[25][0],10){$ifndef windows}){$endif};
           reg.{$ifdef windows}WriteBinaryData{$else}WriteString{$endif}('Changed Value Hotkey',{$ifndef windows}bintohexs({$endif}frameHotkeyConfig.newhotkeys[26][0],10){$ifndef windows}){$endif};
@@ -842,24 +842,24 @@ begin
         reg.WriteString('Scanfolder',tempdiralternative);
 
 
-        reg.WriteBool('Use dbk32 QueryMemoryRegionEx',cbKernelQueryMemoryRegion.checked);
-        reg.WriteBool('Use dbk32 ReadWriteProcessMemory',cbKernelReadWriteProcessMemory.checked);
-        reg.WriteBool('Use dbk32 OpenProcess',cbKernelOpenProcess.checked);
+        reg.WriteBool('Use xbk32 QueryMemoryRegionEx',cbKernelQueryMemoryRegion.checked);
+        reg.WriteBool('Use xbk32 ReadWriteProcessMemory',cbKernelReadWriteProcessMemory.checked);
+        reg.WriteBool('Use xbk32 OpenProcess',cbKernelOpenProcess.checked);
 
-        reg.WriteBool('Use Processwatcher',cbProcessWatcher.checked);
-        reg.WriteBool('Use VEH Debugger',cbUseVEHDebugger.checked);
+        reg.WriteBool('Use Proc4sswatcher',cbProcessWatcher.checked);
+        reg.WriteBool('Use VEH D4bugger',cbUseVEHDebugger.checked);
         reg.WriteBool('VEH Real context on thread creation event', cbVEHRealContextOnThreadCreation.checked);
         VEHRealContextOnThreadCreation:=cbVEHRealContextOnThreadCreation.checked;
 
 
-        reg.WriteBool('Use Windows Debugger',cbUseWindowsDebugger.checked);
-        reg.WriteBool('Use Kernel Debugger',cbKdebug.checked);
-        reg.WriteBool('Use Global Debug Routines',cbGlobalDebug.checked);
-        reg.WriteBool('Use DBVM Debugger', cbUseDBVMDebugger.checked);
+        reg.WriteBool('Use Windows D4bugger',cbUseWindowsDebugger.checked);
+        reg.WriteBool('Use Kernel D4bugger',cbKdebug.checked);
+        reg.WriteBool('Use Global D4bug Routines',cbGlobalDebug.checked);
+        reg.WriteBool('Use XBVM D4bugger', cbUseDBVMDebugger.checked);
 
-        reg.writeBool('DBVMBP Trigger COW', cbDBVMDebugTriggerCOW.checked);
-        reg.writeBool('DBVMBP This Process Only', cbDBVMDebugTargetedProcessOnly.checked);
-        reg.writeBool('DBVMBP Kernelmode', cbDBVMDebugKernelmodeBreaks.checked);
+        reg.writeBool('XBVMBP Trigger COW', cbDBVMDebugTriggerCOW.checked);
+        reg.writeBool('XBVMBP This Process Only', cbDBVMDebugTargetedProcessOnly.checked);
+        reg.writeBool('XBVMBP Kernelmode', cbDBVMDebugKernelmodeBreaks.checked);
 
         dbvmbp_options.TriggerCOW:=cbDBVMDebugTriggerCOW.checked;
         dbvmbp_options.TargetedProcessOnly:=cbDBVMDebugTargetedProcessOnly.checked;

@@ -3,7 +3,7 @@ object frmMemoryViewEx: TfrmMemoryViewEx
   Height = 401
   Top = 247
   Width = 620
-  Caption = 'Graphical Memory View '
+  Caption = 'Graphical M4mory View '
   ClientHeight = 401
   ClientWidth = 620
   KeyPreview = True

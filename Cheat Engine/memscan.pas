@@ -5514,7 +5514,7 @@ begin
   oldmemory:=nil;
   try
 
-    oldAddressFile:=TFileStream.Create(scandir+'ADDRESSES.TMP',fmOpenRead or fmShareDenyNone);
+    oldAddressFile:=TFileStream.Create(scandir+'ADDR4SS4S.TMP',fmOpenRead or fmShareDenyNone);
     oldMemoryFile:=TFileStream.Create(scandir+'MEMORY.TMP',fmOpenRead or fmShareDenyNone);
 
     //set the current index to startentry
@@ -6430,7 +6430,7 @@ begin
   
   //read the results and split up
 
-  AddressFile:=TFileStream.Create(OwningMemScan.ScanresultFolder+'ADDRESSES.TMP',fmOpenRead or fmShareDenyNone);
+  AddressFile:=TFileStream.Create(OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP',fmOpenRead or fmShareDenyNone);
   try
     if variableType in [vtbinary,vtall] then //it uses a specific TBitAddress instead of a dword
       totalAddresses:=(addressfile.size-7) div sizeof(TBitAddress)
@@ -7493,22 +7493,22 @@ begin
           freeandnil(scanners[0].Memoryfile);
 
 
-        deletefile(OwningMemScan.ScanresultFolder+'ADDRESSES.UNDO');
-        renamefile(OwningMemScan.ScanresultFolder+'ADDRESSES.TMP',OwningMemScan.ScanresultFolder+'ADDRESSES.UNDO');
-        if not renamefile(scanners[0].Addressfilename, OwningMemScan.ScanresultFolder+'ADDRESSES.TMP') then
-          RenameFileUTF8(scanners[0].Addressfilename, OwningMemScan.ScanresultFolder+'ADDRESSES.TMP');
+        deletefile(OwningMemScan.ScanresultFolder+'Addr4ss4s.UNDO');
+        renamefile(OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP',OwningMemScan.ScanresultFolder+'Addr4ss4s.UNDO');
+        if not renamefile(scanners[0].Addressfilename, OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP') then
+          RenameFileUTF8(scanners[0].Addressfilename, OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP');
 
         //memory
-        deletefile(OwningMemScan.ScanresultFolder+'MEMORY.UNDO');
-        renamefile(OwningMemScan.ScanresultFolder+'MEMORY.TMP',OwningMemScan.ScanresultFolder+'MEMORY.UNDO');
+        deletefile(OwningMemScan.ScanresultFolder+'M4m0ry.UNDO');
+        renamefile(OwningMemScan.ScanresultFolder+'MEMORY.TMP',OwningMemScan.ScanresultFolder+'M4m0ry.UNDO');
         renamefile(scanners[0].Memoryfilename, OwningMemScan.ScanresultFolder+'MEMORY.TMP');
 
 
         try
-          AddressFile:=TFileStream.Create(OwningMemScan.ScanresultFolder+'ADDRESSES.TMP',fmOpenWrite or fmShareDenyNone);
+          AddressFile:=TFileStream.Create(OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP',fmOpenWrite or fmShareDenyNone);
           MemoryFile:=TFileStream.Create(OwningMemScan.ScanresultFolder+'MEMORY.TMP',fmOpenWrite or fmsharedenynone);
         except
-          raise exception.create(rsErrorWhenWhileLoadingResult+' ('+OwningMemScan.ScanresultFolder+'ADDRESSES.TMP'+')');
+          raise exception.create(rsErrorWhenWhileLoadingResult+' ('+OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP'+')');
         end;
 
 
@@ -7649,7 +7649,7 @@ begin
          // outputdebugstring('to:'+OwningMemScan.ScanresultFolder+'ADDRESSES.First');
 
           {$IFDEF LOWMEMORYUSAGE}
-          copyfile(OwningMemScan.ScanresultFolder+'ADDRESSES.TMP', OwningMemScan.ScanresultFolder+'ADDRESSES.First');
+          copyfile(OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP', OwningMemScan.ScanresultFolder+'ADDRESSES.First');
           copyfile(OwningMemScan.ScanresultFolder+'MEMORY.TMP', OwningMemScan.ScanresultFolder+'MEMORY.First')
           {$else}
           OwningMemScan.SaveFirstScanThread:=TSaveFirstScanThread.create(OwningMemScan.ScanresultFolder, false,@OwningMemScan.memregion,@OwningMemScan.memregionpos, OwningMemScan.previousMemoryBuffer);
@@ -7748,10 +7748,10 @@ var AddressFile: TFilestream;
 begin
   //open the address file and determine if it's a region scan or result scan
   result:=false;
-  if fileexists(ScanresultFolder+'ADDRESSES.TMP') then
+  if fileexists(ScanresultFolder+'ADDR4SS4S.TMP') then
   begin
     try
-      AddressFile:=TFileStream.Create(ScanresultFolder+'ADDRESSES.TMP',fmOpenRead or fmSharedenynone);
+      AddressFile:=TFileStream.Create(ScanresultFolder+'ADDR4SS4S.TMP',fmOpenRead or fmSharedenynone);
       try
         Addressfile.ReadBuffer(datatype,sizeof(datatype));
       finally
@@ -7850,7 +7850,7 @@ var u: TFileStream;
 begin
   result:=false;
   try
-    u:=tfilestream.create(fScanResultFolder+'MEMORY.UNDO', fmopenread or fmShareDenyNone);
+    u:=tfilestream.create(fScanResultFolder+'M4m0ry.UNDO', fmopenread or fmShareDenyNone);
     try
       result:=u.Size>0;
     finally
@@ -7927,7 +7927,7 @@ begin
 
   //copy the current scanresults to memory.savedscan and addresses.savedscan
   CopyFile(pchar(fScanResultFolder+'MEMORY.TMP'), pchar(fScanResultFolder+'MEMORY.'+resultname), false,false);
-  CopyFile(pchar(fScanResultFolder+'ADDRESSES.TMP'), pchar(fScanResultFolder+'ADDRESSES.'+resultname), false, false);
+  CopyFile(pchar(fScanResultFolder+'ADDR4SS4S.TMP'), pchar(fScanResultFolder+'ADDRESSES.'+resultname), false, false);
 
   savedresults.Add(resultname);
 
@@ -7944,10 +7944,10 @@ begin
   if canUndo then
   begin
     deletefile(fScanResultFolder+'MEMORY.TMP');
-    deletefile(fScanResultFolder+'ADDRESSES.TMP');
+    deletefile(fScanResultFolder+'ADDR4SS4S.TMP');
 
-    renamefile(fScanResultFolder+'MEMORY.UNDO',fScanResultFolder+'MEMORY.TMP');
-    renamefile(fScanResultFolder+'ADDRESSES.UNDO',fScanResultFolder+'ADDRESSES.TMP');
+    renamefile(fScanResultFolder+'M4m0ry.UNDO',fScanResultFolder+'MEMORY.TMP');
+    renamefile(fScanResultFolder+'Addr4ss4s.UNDO',fScanResultFolder+'ADDR4SS4S.TMP');
   end;
 end;
 
@@ -8009,20 +8009,20 @@ var
 begin
   try
     try
-      f:=TFileStream.Create(ScanresultFolder+'ADDRESSES.TMP.FILETEST',fmCreate);
+      f:=TFileStream.Create(ScanresultFolder+'ADDR4SS4S.TMP.FILETEST',fmCreate);
       f.WriteAnsiString('This file can be written');
       freeandnil(f);
 
-      f:=TFileStream.Create(ScanresultFolder+'ADDRESSES.TMP.FILETEST',fmOpenRead or fmShareDenyNone);
+      f:=TFileStream.Create(ScanresultFolder+'ADDR4SS4S.TMP.FILETEST',fmOpenRead or fmShareDenyNone);
       s:=f.ReadAnsiString;
       if s<>'This file can be written' then raise exception.create('Invalid data read');
       freeandnil(f);
 
-      f:=TFileStream.Create(ScanresultFolder+'ADDRESSES.TMP.FILETEST',fmOpenWrite or fmShareDenyNone);
+      f:=TFileStream.Create(ScanresultFolder+'ADDR4SS4S.TMP.FILETEST',fmOpenWrite or fmShareDenyNone);
       f.WriteAnsiString('Overwrite works properly');
       freeandnil(f);
 
-      f:=TFileStream.Create(ScanresultFolder+'ADDRESSES.TMP.FILETEST',fmOpenRead or fmShareDenyNone);
+      f:=TFileStream.Create(ScanresultFolder+'ADDR4SS4S.TMP.FILETEST',fmOpenRead or fmShareDenyNone);
       s:=f.ReadAnsiString;
       if s<>'Overwrite works properly' then raise exception.create('Invalid data read2');
       freeandnil(f);
@@ -8031,13 +8031,13 @@ begin
 
 
 
-      DeleteFile(ScanresultFolder+'ADDRESSES.TMP.FILETEST');
+      DeleteFile(ScanresultFolder+'ADDR4SS4S.TMP.FILETEST');
 
-      f:=TFileStream.Create(ScanresultFolder+'ADDRESSES.TMP.FILETEST',fmCreate);
+      f:=TFileStream.Create(ScanresultFolder+'ADDR4SS4S.TMP.FILETEST',fmCreate);
       f.WriteAnsiString('This file can be recreated');
       freeandnil(f);
 
-      f:=TFileStream.Create(ScanresultFolder+'ADDRESSES.TMP.FILETEST',fmOpenRead or fmShareDenyNone);
+      f:=TFileStream.Create(ScanresultFolder+'ADDR4SS4S.TMP.FILETEST',fmOpenRead or fmShareDenyNone);
       s:=f.ReadAnsiString;
       if s<>'This file can be recreated' then raise exception.create('Invalid data read 3');
       freeandnil(f);
@@ -8048,7 +8048,7 @@ begin
       if f<>nil then
         f.free;
 
-      DeleteFile(ScanresultFolder+'ADDRESSES.TMP.FILETEST');
+      DeleteFile(ScanresultFolder+'ADDR4SS4S.TMP.FILETEST');
     end;
 
   except

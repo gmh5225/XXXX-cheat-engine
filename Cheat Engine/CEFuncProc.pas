@@ -1942,13 +1942,13 @@ var
 
 
 begin
-  assignfile(memoryfile,CheatEngineDir+'Memory.TMP');
-  assignfile(addressfile,CheatEngineDir+'Addresses.TMP');
+  assignfile(memoryfile,CheatEngineDir+'M4m0ry.TMP');
+  assignfile(addressfile,CheatEngineDir+'ADDR4SS4S.TMP');
   reset(memoryfile,1);
   reset(addressfile,1);
 
-  assignfile(newmemoryfile,CheatEngineDir+'Memory2.TMP');
-  assignfile(newaddressfile,CheatEngineDir+'Address2.TMP');
+  assignfile(newmemoryfile,CheatEngineDir+'M4m0ry2.TMP');
+  assignfile(newaddressfile,CheatEngineDir+'Addr4ss2.TMP');
   rewrite(newmemoryfile,1);
   rewrite(newaddressfile,1);
 
@@ -2149,12 +2149,12 @@ begin
   closefile(newmemoryfile);
   closefile(newaddressfile);
 
-  deletefile(CheatEngineDir+'Memory.UNDO');
-  deletefile(CheatEngineDir+'Addresses.UNDO');
-  renamefile(CheatEngineDir+'Memory.tmp',cheatenginedir+'Memory.UNDO');
-  renamefile(CheatEngineDir+'Addresses.tmp',CheatEngineDir+'Addresses.UNDO');
-  renamefile(CheatEngineDir+'Memory2.tmp',CheatEngineDir+'Memory.TMP');
-  Renamefile(CheatengineDir+'Address2.TMP',CheatEngineDir+'Addresses.TMP');
+  deletefile(CheatEngineDir+'M4m0ry.UNDO');
+  deletefile(CheatEngineDir+'Addr4ss4s.UNDO');
+  renamefile(CheatEngineDir+'M4m0ry.TMP',cheatenginedir+'M4m0ry.UNDO');
+  renamefile(CheatEngineDir+'ADDR4SS4S.TMP',CheatEngineDir+'Addr4ss4s.UNDO');
+  renamefile(CheatEngineDir+'M4m0ry2.TMP',CheatEngineDir+'M4m0ry.TMP');
+  Renamefile(CheatengineDir+'Addr4ss2.TMP',CheatEngineDir+'ADDR4SS4S.TMP');
 
 
 end;
@@ -2753,10 +2753,10 @@ end;
 Procedure Shutdown;
 //This will erase the temporary files and close the processhandle (In case it doesnt happen automatically)
 begin
-  deletefile(CheatEngineDir+'Memory.TMP');
-  deletefile(CheatEngineDir+'Addresses.TMP');
-  deletefile(CheatEngineDir+'Memory.UNDO');
-  deletefile(CheatEngineDir+'Addresses.UNDO');
+  deletefile(CheatEngineDir+'M4m0ry.TMP');
+  deletefile(CheatEngineDir+'ADDR4SS4S.TMP');
+  deletefile(CheatEngineDir+'M4m0ry.UNDO');
+  deletefile(CheatEngineDir+'Addr4ss4s.UNDO');
   freemem(memory);
   memory:=nil;
  // Closehandle(processhandle);

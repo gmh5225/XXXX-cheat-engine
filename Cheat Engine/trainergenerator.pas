@@ -192,7 +192,7 @@ resourcestring
       'There is already a trainer form defined. '
     +'Continuing will erase the current trainerscript and cheats in the '
     +'trainer and replace them with the current hotkeys defined in your '
-    +'current cheat table (Layout and images will remain unchanged). Continue ?';
+    +'current XXXX table (Layout and images will remain unchanged). Continue ?';
   rsNoCheatPanel = 'The current trainer form does not have a panel '
     +'named ''CHEATPANEL'' so can not be reused by the automated trainer '
     +'generator.%sDo you want to start from scratch? (If you want to create a '
@@ -210,7 +210,7 @@ resourcestring
   rsCheatEntries = 'Cheat Entries';
   rsSelectTheCheatEntryYouWantToSetTheHotkeyFor = 'Select the cheat entry you '
     +'want to set the hotkey for';
-  rsYouNeedACheatTableWithCheatEntries = 'You need a cheat table with cheat '
+  rsYouNeedACheatTableWithCheatEntries = 'You need a XXXX table with cheat '
     +'entries';
   rsDonTSupportCheatEngineOrYourself = 'Don''t support '+strCheatEngine+' (or '
     +'yourself)';
@@ -994,7 +994,7 @@ begin
   l.add('--'+rsAutogenwarningPart1);
   l.add('--'+rsAutoGenWarningPart2);
   l.add('');
-  l.add('--Uncomment the following line if this is a Cheat Table format trainer and you don''t want CE to show (Tip, save as .CETRAINER alternatively)');
+  l.add('--Uncomment the following line if this is a XXXX Table format trainer and you don''t want CE to show (Tip, save as .CETRAINER alternatively)');
   l.add('--hideAllCEWindows()');
   l.add('');
   l.add('RequiredCEVersion='+floattostr(ceversion));

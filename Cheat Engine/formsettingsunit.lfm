@@ -2520,7 +2520,7 @@ object formSettings: TformSettings
           Width = 221
           BorderSpacing.Left = 2
           BorderSpacing.Top = 2
-          Caption = 'Always sign Cheat Tables when saving'
+          Caption = 'Always sign XXXX Tables when saving'
           TabOrder = 0
         end
         object cbAlwaysAskForPassword: TCheckBox

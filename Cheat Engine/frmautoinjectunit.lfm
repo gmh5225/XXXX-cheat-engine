@@ -111,7 +111,7 @@ object frmAutoInject: TfrmAutoInject
         OnClick = miLuaSyntaxCheckClick
       end
       object Assigntocurrentcheattable1: TMenuItem
-        Caption = 'Assign to current cheat table'
+        Caption = 'Assign to current XXXX table'
         ImageIndex = 12
         OnClick = Assigntocurrentcheattable1Click
       end
@@ -199,7 +199,7 @@ object frmAutoInject: TfrmAutoInject
         OnClick = menuFullInjectionClick
       end
       object CheatTablecompliantcodee1: TMenuItem
-        Caption = 'Cheat Table framework code'
+        Caption = 'XXXX Table framework code'
         ShortCut = 49236
         OnClick = CheatTablecompliantcodee1Click
       end

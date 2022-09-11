@@ -1841,7 +1841,7 @@ object MainForm: TMainForm
   end
   object OpenDialog1: TOpenDialog
     DefaultExt = '.CT'
-    Filter = 'All supported cheat tables|*.CT;*.CETRAINER|XXXX engine Trainer (*.CETRAINER)|*.CETRAINER|All files (*.*)|*.*|XXXX engine Tables (*.CT)|*.CT'
+    Filter = 'All supported XXXX tables|*.CT;*.CETRAINER|XXXX engine Trainer (*.CETRAINER)|*.CETRAINER|All files (*.*)|*.*|XXXX engine Tables (*.CT)|*.CT'
     Options = [ofHideReadOnly, ofFileMustExist, ofEnableSizing, ofAutoPreview]
     Left = 48
     Top = 104
@@ -1897,7 +1897,7 @@ object MainForm: TMainForm
       ShortCut = 49235
     end
     object actOpen: TAction
-      Hint = 'Open a cheat table or unprotected cetrainer'
+      Hint = 'Open a XXXX table or unprotected cetrainer'
       ImageIndex = 1
       OnExecute = actOpenExecute
       ShortCut = 16463
@@ -2146,7 +2146,7 @@ object MainForm: TMainForm
       Caption = 'Table'
       OnClick = miTableClick
       object miShowLuaScript: TMenuItem
-        Caption = 'Show Cheat Table Lua Script'
+        Caption = 'Show XXXX Table Lua Script'
         ImageIndex = 10
         ShortCut = 49228
         OnClick = miShowLuaScriptClick

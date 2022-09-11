@@ -9453,7 +9453,7 @@ msgid "About"
 msgstr ""
 
 #: trainergenerator.rsalreadyatrainerformdefined
-msgid "There is already a trainer form defined. Continuing will erase the current trainerscript and cheats in the trainer and replace them with the current hotkeys defined in your current cheat table (Layout and images will remain unchanged). Continue ?"
+msgid "There is already a trainer form defined. Continuing will erase the current trainerscript and cheats in the trainer and replace them with the current hotkeys defined in your current XXXX table (Layout and images will remain unchanged). Continue ?"
 msgstr ""
 
 #: trainergenerator.rsareyousure
@@ -9568,7 +9568,7 @@ msgid "(Un)Freeze"
 msgstr ""
 
 #: trainergenerator.rsyouneedacheattablewithcheatentries
-msgid "You need a cheat table with cheat entries"
+msgid "You need a XXXX table with cheat entries"
 msgstr ""
 
 #: typepopup.rsinvalidlength

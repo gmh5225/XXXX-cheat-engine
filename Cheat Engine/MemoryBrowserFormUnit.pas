@@ -771,7 +771,7 @@ resourcestring
   rsChangeDisplayFader = 'Change display fader';
   rsGotoAddress = 'Goto Address';
   rsFillInTheAddressYouWantToGoTo = 'Fill in the address you want to go to';
-  rsMemoryViewerRunning = 'Memory Viewer - Running';
+  rsMemoryViewerRunning = 'M4mory Viewer - Running';
   rsCheatEngineSingleLingeAssembler = 'Single-line assembler';
   rsTypeYourAssemblerCodeHereAddress = 'Type your assembler code here: (address=%s)';
   rsTheGeneratedCodeIsByteSLongButTheSelectedOpcodeIsB = 'The generated code is %s byte(s) long, but the selected opcode is %s byte(s) long! Do you want to replace the '
@@ -814,7 +814,7 @@ resourcestring
   rsNewSize = 'New size';
   rsMaxStacktraceSize = 'Max stacktrace size';
   rsNeedToRunDissectCode = 'You will need to run the dissect code routine first before this window is usable. Run it now?';
-  rsMemoryViewerCurrentlyDebuggingThread = 'Memory Viewer - Currently debugging thread %s';
+  rsMemoryViewerCurrentlyDebuggingThread = 'M4mory Viewer - Currently debugging thread %s';
   rsRestoreWithOrginalCode = 'Restore with original code';
   rsReplaceWithCodeThatDoesNothing = 'Replace with code that does nothing';
   rsComment = 'Comment';

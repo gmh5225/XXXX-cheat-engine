@@ -1839,7 +1839,7 @@ function varscan_firstScan(sender)
     java_search_finish()
     java.varscan.NextScan.Enabled=false
 
-    sender.Caption=translate("First Scan")
+    sender.Caption=translate("First Sxan")
     sender.Tag=0
   end
 end
@@ -1892,7 +1892,7 @@ function miJavaVariableScanClick(sender)
     varscan.ValueText.Caption=translate("Value")
 
     varscan.FirstScan=createButton(varscan.controls)
-    varscan.FirstScan.Caption=translate("First Scan")
+    varscan.FirstScan.Caption=translate("First Sxan")
 
     varscan.NextScan=createButton(varscan.controls)
     varscan.NextScan.Caption=translate("Next Scan")

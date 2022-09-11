@@ -268,7 +268,7 @@ object MainForm: TMainForm
       Top = 46
       Width = 76
       AutoSize = True
-      Caption = 'First Scan'
+      Caption = 'First Sxan'
       Constraints.MinWidth = 75
       Enabled = False
       OnClick = btnNewScanClick
@@ -741,7 +741,7 @@ object MainForm: TMainForm
       Height = 25
       Top = 8
       Width = 75
-      Caption = 'First Scan2'
+      Caption = 'First Sxan2'
       OnClick = btnFirstClick
       ParentFont = False
       TabOrder = 11

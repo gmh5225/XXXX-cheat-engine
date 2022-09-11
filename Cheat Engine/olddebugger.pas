@@ -983,7 +983,7 @@ begin
     begin
       if threadlist[i,1]=pausedthreadhandle then
       begin
-        caption:='Memory Viewer - Currently debugging thread '+inttohex(threadlist[i,0],8);
+        caption:='M4mory Viewer - Currently debugging thread '+inttohex(threadlist[i,0],8);
         break;
       end;
     end;

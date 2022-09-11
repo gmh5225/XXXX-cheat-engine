@@ -68,7 +68,7 @@ resourcestring
 
   strAddressHasToBeReadable='The address has to be readable if you want to use this function';
   strNewScan='New Scan';
-  strFirstScan='First Scan';
+  strFirstScan='First Sxan';
   strNoDescription='No description';
 
   strNeedNewerWindowsVersion='This function only works in Windows 2000+ (perhaps also NT but not tested)';
@@ -88,7 +88,7 @@ resourcestring
   strUnchangedValue='Unchanged value';
   strIgnoreValue='Ignore value';
   strUnknownInitialValue='Unknown initial value';
-  strCompareToFirstScan='Compare to first scan';
+  strCompareToFirstScan='Compare to first Sxan';
   strCompareToLastScan='Compare to last scan';
   strCompareToSavedScan='Compare to saved scan';
 

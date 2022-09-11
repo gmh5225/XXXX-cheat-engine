@@ -4,7 +4,7 @@ object MemoryBrowser: TMemoryBrowser
   Top = 191
   Width = 732
   HelpContext = 12
-  Caption = 'Memory Viewer'
+  Caption = 'M4mory Viewer'
   ClientHeight = 510
   ClientWidth = 732
   Menu = MainMenu1
@@ -1993,7 +1993,7 @@ object MemoryBrowser: TMemoryBrowser
       end
     end
     object Kerneltools1: TMenuItem
-      Caption = 'Kernel tools'
+      Caption = 'K4rnel tools'
       object Allocatenonpagedmemory1: TMenuItem
         Caption = 'Allocate nonpaged memory'
         ImageIndex = 7

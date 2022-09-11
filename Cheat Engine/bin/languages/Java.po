@@ -95,7 +95,7 @@ msgid "New Scan"
 msgstr ""
 
 #: java-FS
-msgid "First Scan"
+msgid "First Sxan"
 msgstr ""
 
 #: java-JVScanner

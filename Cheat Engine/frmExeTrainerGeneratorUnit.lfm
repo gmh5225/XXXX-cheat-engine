@@ -115,7 +115,7 @@ object frmExeTrainerGenerator: TfrmExeTrainerGenerator
         Height = 19
         Top = 22
         Width = 96
-        Caption = 'Kernel Tools'
+        Caption = 'K4rnel Tools'
         TabOrder = 1
       end
       object cbDotNet: TCheckBox

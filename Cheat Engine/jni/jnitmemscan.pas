@@ -127,9 +127,9 @@ var
   scanvalue1, scanvalue2, protectionflags: string;
   c: jclass;
 begin
-  log('First scan');
+  log('First Sxan');
 
-  c:=penv^.FindClass(penv, 'org/cheatengine/TObject');
+  c:=penv^.FindClass(penv, 'org/XXXXengine/TObject');
 
   if penv^.IsInstanceOf(penv, obj, c)=0 then
   begin
@@ -184,7 +184,7 @@ end;
 
 const methodcount=8;
 var jnimethods: array [0..methodcount-1] of JNINativeMethod =(
-  (name: 'create'; signature: '(Lorg/cheatengine/TMemScan;)J'; fnPtr: @TMemScan_Create),
+  (name: 'create'; signature: '(Lorg/XXXXengine/TMemScan;)J'; fnPtr: @TMemScan_Create),
   (name: 'newScan'; signature: '()V'; fnPtr: @TMemScan_NewScan),
   (name: 'firstScan'; signature: '(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;JJILjava/lang/String;ZZZZZZZ)V'; fnPtr: @TMemScan_FirstScan),
   (name: 'nextScan'; signature: '(IILjava/lang/String;Ljava/lang/String;ZZZZZZLjava/lang/String;)V'; fnPtr: @TMemScan_NextScan),
@@ -199,7 +199,7 @@ procedure InitializeJniTMemScan(env: PJNIEnv);
 var c: jclass;
 begin
   log('InitializeJniTMemScan entry');
-  c:=env^.FindClass(env, 'org/cheatengine/TMemScan');
+  c:=env^.FindClass(env, 'org/XXXXengine/TMemScan');
   env^.RegisterNatives(env, c, @jnimethods[0], methodcount);
 
   scanDoneMethodID:=env^.GetMethodID(env, c, 'OnScanDone', '()V');

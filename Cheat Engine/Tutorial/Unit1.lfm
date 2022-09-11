@@ -4,7 +4,7 @@ object Form1: TForm1
   Top = 285
   Width = 640
   BorderIcons = [biSystemMenu]
-  Caption = 'Cheat Engine Tutorial v3.4'
+  Caption = 'XXXX engine Tutorial v3.4'
   ClientHeight = 280
   ClientWidth = 640
   OnCloseQuery = FormCloseQuery

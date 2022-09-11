@@ -11,4 +11,4 @@ link /DLL /IMPLIB:lua53-64.lib /OUT:lua53-64.dll *.obj
 link /OUT:lua64.exe lua.o lua53-64.lib
 lib /OUT:lua53-64-static.lib *.obj
 link /OUT:luac64.exe luac.o lua53-64-static.lib
-copy lua53-64.dll "d:\svn\Cheat Engine\bin"
+copy lua53-64.dll "d:\svn\XXXX engine\bin"

@@ -416,7 +416,7 @@ begin
   // startgame2(self);
 
   reg:=tregistry.create;
-  if reg.OpenKey('\Software\Cheat Engine\GTutorial', false) then
+  if reg.OpenKey('\Software\XXXX engine\GTutorial', false) then
   begin
     //if reg.ValueExists('This does not count as a solution for tutorial 1') then
     begin

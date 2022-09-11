@@ -30,14 +30,14 @@ const ceversion=7.41;
   strMyCheatTables='My Mod Tables';
   strSpeedHack='Speedmodifier';
 {$else}
-  strCheatEngine='Cheat Engine';
-  strCheatTable='Cheat Table';
-  strCheatTableLower='cheat table';
-  strCheat='Cheat';
+  strCheatEngine='XXXX engine';
+  strCheatTable='XXXX Table';
+  strCheatTableLower='XXXX table';
+  strCheat='XXXX';
   strTrainer='Trainer';
   strTrainerLower='trainer';
-  strMyCheatTables='My Cheat Tables';
-  strSpeedHack='Speedhack';
+  strMyCheatTables='My XXXX Tables';
+  strSpeedHack='SpeedXXXX';
 {$endif}
 
 resourcestring

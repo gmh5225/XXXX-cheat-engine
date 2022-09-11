@@ -9,12 +9,12 @@
         <MainUnitHasTitleStatement Value="False"/>
       </Flags>
       <MainUnit Value="0"/>
-      <Title Value="Cheat Engine launcher"/>
+      <Title Value="XXXX engine launcher"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <XPManifest>
         <ExecutionLevel Value="requireAdministrator"/>
-        <TextName Value="Cheat Engine.Cheat Engine.Launcher"/>
+        <TextName Value="XXXX engine.XXXX engine.Launcher"/>
         <TextDesc Value="Launches the best suitable cheatengine-*.exe"/>
       </XPManifest>
       <Icon Value="0"/>
@@ -34,7 +34,7 @@
           <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
-            <Filename Value="..\bin\Cheat Engine.exe" ApplyConventions="False"/>
+            <Filename Value="..\bin\XXXX engine.exe" ApplyConventions="False"/>
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
@@ -292,7 +292,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="..\bin\Cheat Engine.exe"/>
+      <Filename Value="..\bin\XXXX engine.exe"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>

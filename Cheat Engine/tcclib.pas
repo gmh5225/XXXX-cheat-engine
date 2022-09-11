@@ -1208,19 +1208,19 @@ begin
   {$ifdef windows}
 
   {$ifdef cpu32}
-  module:=LoadLibrary({$ifdef standalonetest}'D:\git\cheat-engine\Cheat Engine\bin\'+{$endif}'tcc32-32.dll'); //generates 32-bit code
+  module:=LoadLibrary({$ifdef standalonetest}'D:\git\XXXX-engine\XXXX engine\bin\'+{$endif}'tcc32-32.dll'); //generates 32-bit code
   {$else}
   case target of
-    i386:    module:=loadlibrary({$ifdef standalonetest}'D:\git\cheat-engine\Cheat Engine\bin\'+{$endif}'tcc64-32.dll'); //generates 32-bit code
-    x86_64:  module:=loadlibrary({$ifdef standalonetest}'D:\git\cheat-engine\Cheat Engine\bin\'+{$endif}'tcc64-64.dll');
-    i386_sysv: module:=loadlibrary({$ifdef standalonetest}'D:\git\cheat-engine\Cheat Engine\bin\'+{$endif}'tcc64-32-linux.dll'); //32-bit linux abi code
-    x86_64_sysv: module:=loadlibrary({$ifdef standalonetest}'D:\git\cheat-engine\Cheat Engine\bin\'+{$endif}'tcc64-64-linux.dll'); //64-bit linux
+    i386:    module:=loadlibrary({$ifdef standalonetest}'D:\git\XXXX-engine\XXXX engine\bin\'+{$endif}'tcc64-32.dll'); //generates 32-bit code
+    x86_64:  module:=loadlibrary({$ifdef standalonetest}'D:\git\XXXX-engine\XXXX engine\bin\'+{$endif}'tcc64-64.dll');
+    i386_sysv: module:=loadlibrary({$ifdef standalonetest}'D:\git\XXXX-engine\XXXX engine\bin\'+{$endif}'tcc64-32-linux.dll'); //32-bit linux abi code
+    x86_64_sysv: module:=loadlibrary({$ifdef standalonetest}'D:\git\XXXX-engine\XXXX engine\bin\'+{$endif}'tcc64-64-linux.dll'); //64-bit linux
   end;
   {$endif}
   {$else}
   if target=aarch64 then
   begin
-    p:={$ifdef standalonetest}'/Users/ericheijnen/Documents/GitHub/cheat-engine/Cheat Engine/bin/tcc/Release/'+{$endif}'libtcc_arm64.dylib';
+    p:={$ifdef standalonetest}'/Users/ericheijnen/Documents/GitHub/XXXX-engine/XXXX engine/bin/tcc/Release/'+{$endif}'libtcc_arm64.dylib';
     module:=loadlibrary(p);
 
     if module=0 then
@@ -1418,11 +1418,11 @@ var
   params: string;
   i: integer;
 begin
-  add_include_path(s,{$ifdef standalonetest}'/Users/ericheijnen/Documents/GitHub/cheat-engine/Cheat Engine/bin/cheatengine-x86_64.app/Contents/MacOS/'+{$endif}'include');
+  add_include_path(s,{$ifdef standalonetest}'/Users/ericheijnen/Documents/GitHub/XXXX-engine/XXXX engine/bin/cheatengine-x86_64.app/Contents/MacOS/'+{$endif}'include');
   {$ifdef windows}
-  add_include_path(s,{$ifdef standalonetest}'D:\git\cheat-engine\Cheat Engine\bin\'+{$endif}'include\winapi');
+  add_include_path(s,{$ifdef standalonetest}'D:\git\XXXX-engine\XXXX engine\bin\'+{$endif}'include\winapi');
   {$endif}
-  add_include_path(s,{$ifdef standalonetest}'/Users/ericheijnen/Documents/GitHub/cheat-engine/Cheat Engine/bin/cheatengine-x86_64.app/Contents/MacOS/'+{$endif}'include\sys');
+  add_include_path(s,{$ifdef standalonetest}'/Users/ericheijnen/Documents/GitHub/XXXX-engine/XXXX engine/bin/cheatengine-x86_64.app/Contents/MacOS/'+{$endif}'include\sys');
   add_include_path(s,pchar(ExtractFilePath(application.exename)+'include'));
   {$ifdef windows}
   add_include_path(s,pchar(ExtractFilePath(application.exename)+'include\winapi'));

@@ -512,7 +512,7 @@ object frmPointerScannerSettings: TfrmPointerScannerSettings
         AnchorSideTop.Side = asrBottom
         Left = 0
         Height = 19
-        Hint = 'Compresses the generated .PTR files slightly so they take less space on the disk and less time writing to disk.'#13#10'Most of the time the bottleneck of a pointerscan is disk writing, so it is recommended to use this option.'#13#10#13#10'Compressed .PTR files can not be read out by older Cheat Engine versions'
+        Hint = 'Compresses the generated .PTR files slightly so they take less space on the disk and less time writing to disk.'#13#10'Most of the time the bottleneck of a pointerscan is disk writing, so it is recommended to use this option.'#13#10#13#10'Compressed .PTR files can not be read out by older XXXX engine versions'
         Top = 179
         Width = 170
         Caption = 'Compressed pointerscan file'

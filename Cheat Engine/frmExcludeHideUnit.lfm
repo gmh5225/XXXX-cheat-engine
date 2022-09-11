@@ -16,7 +16,7 @@ object frmExcludeHide: TfrmExcludeHide
     Width = 486
     Align = alTop
     AutoSize = False
-    Caption = 'Select the way cheat Engine hides/shows windows. (Will not work if a window that gets hidden or shown is not responding. E.g:Paused)'
+    Caption = 'Select the way XXXX engine hides/shows windows. (Will not work if a window that gets hidden or shown is not responding. E.g:Paused)'
     ParentColor = False
     WordWrap = True
   end

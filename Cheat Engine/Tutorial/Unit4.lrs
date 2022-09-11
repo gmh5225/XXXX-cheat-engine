@@ -10,7 +10,7 @@ LazarusResources.Add('TForm4','FORMDATA',[
   +'AnchorSideTop.Control'#7#5'Owner'#4'Left'#2#8#6'Height'#2#15#3'Top'#2#8#5'W'
   +'idth'#3'1'#1#18'BorderSpacing.Left'#2#8#17'BorderSpacing.Top'#2#8#19'Border'
   +'Spacing.Right'#2#8#7'Caption'#6'9Well done, you''ve completed the tutorial '
-  +'of Cheat Engine.'#11'ParentColor'#8#0#0#6'TLabel'#6'Label2'#22'AnchorSideLe'
+  +'of XXXX engine.'#11'ParentColor'#8#0#0#6'TLabel'#6'Label2'#22'AnchorSideLe'
   +'ft.Control'#7#6'Label1'#21'AnchorSideTop.Control'#7#6'Label1'#18'AnchorSide'
   +'Top.Side'#7#9'asrBottom'#4'Left'#2#8#6'Height'#2#15#3'Top'#2#23#5'Width'#3
   +#152#1#19'BorderSpacing.Right'#2#8#7'Caption'#6'LJust play around with the t'
@@ -25,10 +25,10 @@ LazarusResources.Add('TForm4','FORMDATA',[
   +'ner'#20'AnchorSideRight.Side'#7#9'asrBottom'#4'Left'#2#8#6'Height'#2#30#3'T'
   +'op'#2'*'#5'Width'#3#155#1#7'Anchors'#11#5'akTop'#6'akLeft'#7'akRight'#0#17
   +'BorderSpacing.Top'#2#4#19'BorderSpacing.Right'#2#8#7'Caption'#6'[And you ca'
-  +'n always check out the Cheat Engine Forum for useful information and ask fo'
+  +'n always check out the XXXX engine Forum for useful information and ask fo'
   +'r help'#11'ParentColor'#8#8'WordWrap'#9#0#0#6'TLabel'#6'Label4'#21'AnchorSi'
   +'deTop.Control'#7#6'Label3'#18'AnchorSideTop.Side'#7#9'asrBottom'#6'Cursor'#7
   +#11'crHandPoint'#4'Left'#3#160#0#6'Height'#2#15#3'Top'#2'H'#5'Width'#2'l'#7
-  +'Caption'#6#18'Cheat Engine Forum'#11'ParentColor'#8#7'OnClick'#7#11'Label4C'
+  +'Caption'#6#18'XXXX engine Forum'#11'ParentColor'#8#7'OnClick'#7#11'Label4C'
   +'lick'#0#0#0
 ]);

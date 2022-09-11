@@ -37,7 +37,7 @@ object frameHotkeyConfig: TframeHotkeyConfig
       ExtendedSelect = False
       Items.Strings = (
         'Attach to current foreground process'
-        'Popup/Hide cheat engine'
+        'Popup/Hide XXXX engine'
         'Pause the selected process'
         'Toggle the speedhack'
         'Speedhack speed 1'

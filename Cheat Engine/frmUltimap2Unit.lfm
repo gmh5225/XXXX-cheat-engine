@@ -484,7 +484,7 @@ object frmUltimap2: TfrmUltimap2
         AnchorSideTop.Side = asrBottom
         Left = 21
         Height = 19
-        Hint = 'Normally Cheat Engine will delete the trace files after they have been processed. But if you wish to save them for your own use, check this box'#13#10#13#10'These trace files can grow really big, so make sure you have enough diskspace'
+        Hint = 'Normally XXXX engine will delete the trace files after they have been processed. But if you wish to save them for your own use, check this box'#13#10#13#10'These trace files can grow really big, so make sure you have enough diskspace'
         Top = 229
         Width = 137
         Caption = 'Don''t delete trace files'

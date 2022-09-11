@@ -51,7 +51,7 @@ resourcestring
   rsLOSER = 'BOO';
 
   rsTutorialStep2=
-    'Now that you have opened the tutorial with Cheat Engine let''s get on with the next step.'+#13#10+
+    'Now that you have opened the tutorial with XXXX engine let''s get on with the next step.'+#13#10+
     ''+#13#10+
     'You can see at the bottom of this window is the text Health: xxx'+#13#10+
     'Each time you click ''Hit me''  your health gets decreased.'+#13#10+

@@ -36,7 +36,7 @@ function autosave.saveState()
       --another CE has done an autosave
       if getProcessList()[pid]==nil then
         --it doesn't exist anymore.
-        messageDialog(translate('Another instance of Cheat Engine has crashed and it created an autosave.  Autosave disabled until you go to settings and click ok'), mtWarning, mbOk)
+        messageDialog(translate('Another instance of XXXX engine has crashed and it created an autosave.  Autosave disabled until you go to settings and click ok'), mtWarning, mbOk)
         return false
       end
     end
@@ -49,7 +49,7 @@ function autosave.saveState()
     return false
   end
     
-  path=path..'Cheat Engine AutoSave';
+  path=path..'XXXX engine AutoSave';
   lfs.mkdir(path)
   
   
@@ -152,7 +152,7 @@ function autosave.loadState()
  -- print("loadState()")
   
   AutoSaveSettings['ProcessID']=getCheatEngineProcessID()
-  local path=autosave.getPath()..'Cheat Engine AutoSave\\';  
+  local path=autosave.getPath()..'XXXX engine AutoSave\\';  
   
   r,err=loadTable(path..'table.ct')
   if (r==nil) or (r==false) then
@@ -307,7 +307,7 @@ if (pid) and (pid ~= '') and (getProcessList()[tonumber(pid)]==nil) then
   --The noted down processid does not exist anymore. CE crashed.  Ask to load the autosave
   AutoSaveSettings['ProcessID']=nil
   
-  if messageDialog(translate('Cheat Engine did not properly close last time. Do you wish to restore your work?'), mtInformation, mbYes, mbNo)==mrYes then
+  if messageDialog(translate('XXXX engine did not properly close last time. Do you wish to restore your work?'), mtInformation, mbYes, mbNo)==mrYes then
     autosave.loadState()    
   end
 end

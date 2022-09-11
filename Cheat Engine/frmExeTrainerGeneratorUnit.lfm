@@ -238,7 +238,7 @@ object frmExeTrainerGenerator: TfrmExeTrainerGenerator
         AnchorSideTop.Control = GroupBox4
         Left = 76
         Height = 19
-        Hint = 'Only put the trainer data in the trainer. The user must have Cheat Engine installed to run this trainer'
+        Hint = 'Only put the trainer data in the trainer. The user must have XXXX engine installed to run this trainer'
         Top = 0
         Width = 42
         BorderSpacing.Left = 4
@@ -253,7 +253,7 @@ object frmExeTrainerGenerator: TfrmExeTrainerGenerator
         AnchorSideTop.Control = GroupBox4
         Left = 8
         Height = 19
-        Hint = 'Puts the Cheat Engine executable, dll''s and other requirements into the trainer'
+        Hint = 'Puts the XXXX engine executable, dll''s and other requirements into the trainer'
         Top = 0
         Width = 64
         BorderSpacing.Left = 8

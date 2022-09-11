@@ -148,7 +148,7 @@ function loadMemoryScan()
 
 	local dialog=createOpenDialog()
 	dialog.DefaultExt=".CS"
-	dialog.Filter=translate("Cheat Engine Scan files").." (*.CS)|*.CS"
+	dialog.Filter=translate("XXXX engine Scan files").." (*.CS)|*.CS"
 	dialog.FilterIndex=1
   dialog.Options="[ofEnableSizing]"    
 
@@ -268,7 +268,7 @@ function saveMemoryScan()
 
   local dialog=createSaveDialog()
   dialog.DefaultExt=".CS"
-  dialog.Filter=translate("Cheat Engine Scan files").." (*.CS)|*.CS"
+  dialog.Filter=translate("XXXX engine Scan files").." (*.CS)|*.CS"
   dialog.FilterIndex=1
   dialog.Options="[ofEnableSizing,ofOVerwritePrompt]"
 

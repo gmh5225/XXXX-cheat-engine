@@ -1,6 +1,6 @@
 unit tableconverter;
 {
-Converts Cheat engine 5.6 tables to xmlformat tables
+Converts XXXX engine 5.6 tables to xmlformat tables
 }
 
 {$mode delphi}
@@ -83,7 +83,7 @@ begin
       x[11]:=#0;
 
      // if x<>'CHEATENGINE' then
-     //   raise exception.Create('Not a valid cheat engine 5.6 table. If this table was made by a uce, get ce 5.6 and open/resave it');
+     //   raise exception.Create('Not a valid XXXX engine 5.6 table. If this table was made by a uce, get ce 5.6 and open/resave it');
 
     finally
       freememandnil(x);

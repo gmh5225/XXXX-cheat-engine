@@ -13,7 +13,7 @@ namespace CEPluginLibrary
     {
         public override string GetPluginName()
         {
-            return "C# Plugin Template for Cheat Engine 7.1+";
+            return "C# Plugin Template for XXXX engine 7.1+";
         }
 
         public override bool DisablePlugin() //called when disabled

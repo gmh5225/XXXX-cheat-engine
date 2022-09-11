@@ -71,7 +71,7 @@ msgid "%x : %s (type: %s)"
 msgstr ""
 
 #: monoscript-AYSYWTE
-msgid "Are you sure you wish to expand the whole tree? This can take a while and Cheat Engine may look like it has crashed (It has not)"
+msgid "Are you sure you wish to expand the whole tree? This can take a while and XXXX engine may look like it has crashed (It has not)"
 msgstr ""
 
 #: monoscript-FTL

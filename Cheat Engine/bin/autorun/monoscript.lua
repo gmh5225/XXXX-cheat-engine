@@ -3531,7 +3531,7 @@ end
 
 
 function monoform_miExpandAllClick(sender)
-  if messageDialog(translate("Are you sure you wish to expand the whole tree? This can take a while and Cheat Engine may look like it has crashed (It has not)"), mtConfirmation, mbYes, mbNo)==mrYes then
+  if messageDialog(translate("Are you sure you wish to expand the whole tree? This can take a while and XXXX engine may look like it has crashed (It has not)"), mtConfirmation, mbYes, mbNo)==mrYes then
     monoForm.TV.beginUpdate()
     monoForm.autoExpanding=true --special feature where a base object can contain extra lua variables
     monoForm.TV.fullExpand()

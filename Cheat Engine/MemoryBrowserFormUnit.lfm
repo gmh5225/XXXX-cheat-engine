@@ -719,7 +719,7 @@ object MemoryBrowser: TMemoryBrowser
       object lvStacktraceData: TListView
         Left = 2
         Height = 135
-        Hint = 'Shows the current stack.'#13#10'Tip: When doubleclicking the value and it represents an address, then you can hold shift to make it show in the disassembler, and ctrl to make it show in the memory view. Else Cheat Engine will guess it for you based on if it''s executable memory or not'
+        Hint = 'Shows the current stack.'#13#10'Tip: When doubleclicking the value and it represents an address, then you can hold shift to make it show in the disassembler, and ctrl to make it show in the memory view. Else XXXX engine will guess it for you based on if it''s executable memory or not'
         Top = 2
         Width = 205
         Align = alClient
@@ -2037,7 +2037,7 @@ object MemoryBrowser: TMemoryBrowser
   end
   object OpenMemory: TOpenDialog
     DefaultExt = '.CEM'
-    Filter = 'Cheat Engine Memory file|*.CEM|All Files (*.*)|*.*'
+    Filter = 'XXXX engine Memory file|*.CEM|All Files (*.*)|*.*'
     FilterIndex = 0
     Left = 152
     Top = 80

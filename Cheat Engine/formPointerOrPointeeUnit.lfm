@@ -6,7 +6,7 @@ object formPointerOrPointee: TformPointerOrPointee
   AutoSize = True
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Cheat Engine Pointer'
+  Caption = 'XXXX engine Pointer'
   ClientHeight = 99
   ClientWidth = 354
   Position = poMainFormCenter

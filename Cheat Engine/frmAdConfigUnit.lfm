@@ -4,7 +4,7 @@ object frmAdConfig: TfrmAdConfig
   Top = 381
   Width = 335
   AutoSize = True
-  Caption = 'Support Cheat Engine'
+  Caption = 'Support XXXX engine'
   ClientHeight = 267
   ClientWidth = 335
   OnCreate = FormCreate
@@ -15,7 +15,7 @@ object frmAdConfig: TfrmAdConfig
     Top = 0
     Width = 335
     Align = alTop
-    Caption = 'Thank you for supporting Cheat Engine. And to thank you for that I''ll let you share in the generated traffic'
+    Caption = 'Thank you for supporting XXXX engine. And to thank you for that I''ll let you share in the generated traffic'
     ParentColor = False
     WordWrap = True
   end

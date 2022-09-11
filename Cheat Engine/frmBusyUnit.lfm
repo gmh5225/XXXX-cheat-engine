@@ -6,7 +6,7 @@ object frmBusy: TfrmBusy
   AutoSize = True
   BorderIcons = []
   BorderStyle = bsSingle
-  Caption = 'Cheat Engine Scan Busy'
+  Caption = 'XXXX engine Scan Busy'
   ClientHeight = 34
   ClientWidth = 374
   FormStyle = fsStayOnTop

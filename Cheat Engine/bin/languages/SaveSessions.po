@@ -3,7 +3,7 @@ msgid "Open a process first"
 msgstr ""
 
 #: SS-CESF
-msgid "Cheat Engine Scan files"
+msgid "XXXX engine Scan files"
 msgstr ""
 
 #: SS-OaPFDaS

@@ -153,7 +153,7 @@ msgid "This is not a valid address"
 msgstr ""
 
 #: advancedoptionsunit.rsaocheatenginefailedtogetintotheconfigofselectedprogram
-msgid "Cheat Engine failed to get into the config of the selected program."
+msgid "XXXX engine failed to get into the config of the selected program."
 msgstr ""
 
 #: advancedoptionsunit.rsaoerrorwhiletryingtocreatethesharedkeystructureetc
@@ -758,7 +758,7 @@ msgid "I couldn't attach the debugger to this process! You could try to open the
 msgstr ""
 
 #: cedebugger.rsdonotclosece
-msgid "If you close Cheat Engine while the game is running, the game will close too. Are you sure you want to do this?"
+msgid "If you close XXXX engine while the game is running, the game will close too. Are you sure you want to do this?"
 msgstr ""
 
 #: cedebugger.rspleasetargetanotherprocess
@@ -766,7 +766,7 @@ msgid "Please target another process"
 msgstr ""
 
 #: cedebugger.rsthiswillattachthedebuggerofcheatenginetothecurrent
-msgid "This will attach the debugger of Cheat Engine to the current process."
+msgid "This will attach the debugger of XXXX engine to the current process."
 msgstr ""
 
 #: cedebugger.rsyoumustfirstopenaprocess
@@ -1161,7 +1161,7 @@ msgid "The driver failed to load due to signing issues. If you have secure boot 
 msgstr ""
 
 #: dbk32functions.rspleaserunthe64bitversionofce
-msgid "Please run the 64-bit version of Cheat Engine"
+msgid "Please run the 64-bit version of XXXX engine"
 msgstr ""
 
 #: dbk32functions.rsthedrivercouldntbeopened
@@ -1177,7 +1177,7 @@ msgid "The driver failed to successfully initialize. Some functions may not comp
 msgstr ""
 
 #: dbk32functions.rsthedriverthatiscurrentlyloaded
-msgid "The driver that is currently loaded belongs to a different version of Cheat Engine. Please unload this driver or reboot."
+msgid "The driver that is currently loaded belongs to a different version of XXXX engine. Please unload this driver or reboot."
 msgstr ""
 
 #: dbk32functions.rstheservicecouldntgetopened
@@ -1189,7 +1189,7 @@ msgid "The ultimap service couldn't get opened and also couldn't get created.  (
 msgstr ""
 
 #: dbk32functions.rsyouaremissingthedriver
-msgid "You are missing the driver. Try reinstalling Cheat Engine, and try to disable your anti-virus before doing so."
+msgid "You are missing the driver. Try reinstalling XXXX engine, and try to disable your anti-virus before doing so."
 msgstr ""
 
 #: dbk64secondaryloader.rserrorwhiletryingtoloadthedriveratpart
@@ -1726,7 +1726,7 @@ msgid "bcrypt could not be used"
 msgstr ""
 
 #: feces.rscheatenginesignaturefiles
-msgid "Cheat Engine signature files"
+msgid "XXXX engine signature files"
 msgstr ""
 
 #: feces.rscouldnotopenthealgorithmprovider
@@ -1784,7 +1784,7 @@ msgid "Failed to get the signature size"
 msgstr ""
 
 #: feces.rsfailedtoloadcheatenginepublickey
-msgid "Failed to load Cheat Engine public key"
+msgid "Failed to load XXXX engine public key"
 msgstr ""
 
 #: feces.rsfailedtoloadprivatekey
@@ -1796,7 +1796,7 @@ msgid "Failed to load the table public key"
 msgstr ""
 
 #: feces.rsinvalidpublickey
-msgid "The provided public key is invalid(Not signed by the Cheat Engine guy). Remove the signature section to load this table"
+msgid "The provided public key is invalid(Not signed by the XXXX engine guy). Remove the signature section to load this table"
 msgstr ""
 
 #: feces.rsispasswordcorrect
@@ -1812,7 +1812,7 @@ msgid "This table's signature does not contain a SignedHash element"
 msgstr ""
 
 #: feces.rsselectyourcheatenginesignaturefile
-msgid "Select your Cheat Engine signature file"
+msgid "Select your XXXX engine signature file"
 msgstr ""
 
 #: feces.rsthistablehasbeenmodified
@@ -2465,7 +2465,7 @@ msgid "Plugins"
 msgstr ""
 
 #: formsettingsunit.rspopuphidecheatengine
-msgid "Popup/Hide Cheat Engine"
+msgid "Popup/Hide XXXX engine"
 msgstr ""
 
 #: formsettingsunit.rsrequiresdbvm
@@ -2473,7 +2473,7 @@ msgid "(Requires DBVM)"
 msgstr ""
 
 #: formsettingsunit.rsrestartce
-msgid "It is recommended to restart Cheat Engine for this change to take effect"
+msgid "It is recommended to restart XXXX engine for this change to take effect"
 msgstr ""
 
 #: formsettingsunit.rsscansettings
@@ -2559,7 +2559,7 @@ msgid "Unrandomizer"
 msgstr ""
 
 #: formsettingsunit.rsyouhaventselectedanymemorytypethiswillresultinchea
-msgid "You haven't selected any memory type. This will result in Cheat Engine finding NO memory! Are you stupid?"
+msgid "You haven't selected any memory type. This will result in XXXX engine finding NO memory! Are you stupid?"
 msgstr ""
 
 #: formsettingsunit.strprocesswatcherwillpreventunloader
@@ -2623,11 +2623,11 @@ msgid "Auto assembler"
 msgstr ""
 
 #: frmautoinjectunit.rsceafilter
-msgid "Cheat Engine Assembly (*.CEA)|*.CEA|All Files ( *.* )|*.*"
+msgid "XXXX engine Assembly (*.CEA)|*.CEA|All Files ( *.* )|*.*"
 msgstr ""
 
 #: frmautoinjectunit.rscegafilter
-msgid "Cheat Engine GNU Assembly (*.CEGA)|*.CEGA|All Files ( *.* )|*.*"
+msgid "XXXX engine GNU Assembly (*.CEGA)|*.CEGA|All Files ( *.* )|*.*"
 msgstr ""
 
 #: frmautoinjectunit.rscodeinjecttemplate
@@ -3492,7 +3492,7 @@ msgid "%s is not a valid address"
 msgstr ""
 
 #: frmsavememoryregionunit.rsnostartaddress
-msgid "If you don't include the header data you'll have to specify the startaddress yourself when loading the file(That means Cheat Engine won't fill in the startaddress text field when loaded for you)"
+msgid "If you don't include the header data you'll have to specify the startaddress yourself when loading the file(That means XXXX engine won't fill in the startaddress text field when loaded for you)"
 msgstr ""
 
 #: frmsavememoryregionunit.rsnotallthememorywasreadablein
@@ -4122,7 +4122,7 @@ msgid "Pause"
 msgstr ""
 
 #: frmultimapunit.rsuupleaserunthe64bitversionofcheatenginetomakeuseofthisfeature
-msgid "Please run the 64-bit version of Cheat Engine to make use of this feature"
+msgid "Please run the 64-bit version of XXXX engine to make use of this feature"
 msgstr ""
 
 #: frmultimapunit.rsuuresume
@@ -4700,7 +4700,7 @@ msgid "between %"
 msgstr ""
 
 #: mainunit.rsbringscheatenginetofront
-msgid "brings Cheat Engine to front"
+msgid "brings XXXX engine to front"
 msgstr ""
 
 #: mainunit.rsbusy
@@ -4769,7 +4769,7 @@ msgid "Do you want a header with address support ?"
 msgstr ""
 
 #: mainunit.rsdoyouwanttogotothecheatenginewebsite
-msgid "Do you want to go to the Cheat Engine website?"
+msgid "Do you want to go to the XXXX engine website?"
 msgstr ""
 
 #: mainunit.rsdoyouwanttoprotectthistrainerfilefromediting
@@ -4790,7 +4790,7 @@ msgstr ""
 
 #: mainunit.rsenablespeedhack
 msgctxt "mainunit.rsenablespeedhack"
-msgid "Enable Speedhack"
+msgid "Enable SpeedXXXX"
 msgstr ""
 
 #: mainunit.rsexpired
@@ -4919,7 +4919,7 @@ msgid "Load the associated table? (%s)"
 msgstr ""
 
 #: mainunit.rsluascriptcheattable
-msgid "Lua script: Cheat Table"
+msgid "Lua script: XXXX Table"
 msgstr ""
 
 #: mainunit.rsmodified
@@ -5093,7 +5093,7 @@ msgid "Do you want to try out the tutorial?"
 msgstr ""
 
 #: mainunit.rsunabletoscanfixyourscansettings
-msgid "Unable to scan. Fix your scan settings and restart Cheat Engine"
+msgid "Unable to scan. Fix your scan settings and restart XXXX engine"
 msgstr ""
 
 #: mainunit.rsunrandomizerinfo
@@ -5176,7 +5176,7 @@ msgid "Change script"
 msgstr ""
 
 #: mainunit.strclicktogohome
-msgid "Click here to go to the Cheat Engine homepage"
+msgid "Click here to go to the XXXX engine homepage"
 msgstr ""
 
 #: mainunit.strconfirmprocesstermination
@@ -5200,15 +5200,15 @@ msgid "Delete these addresses"
 msgstr ""
 
 #: mainunit.strdisablecheat
-msgid "Disable Cheat"
+msgid "Disable XXXX"
 msgstr ""
 
 #: mainunit.strdontbother
-msgid "Don't even bother. Cheat Engine uses the main thread to receive messages when the scan is done, freeze it and CE will crash!"
+msgid "Don't even bother. XXXX engine uses the main thread to receive messages when the scan is done, freeze it and CE will crash!"
 msgstr ""
 
 #: mainunit.strenablecheat
-msgid "Enable Cheat"
+msgid "Enable XXXX"
 msgstr ""
 
 #: mainunit.strerror
@@ -5238,7 +5238,7 @@ msgid "Freeze all addresses in this list"
 msgstr ""
 
 #: mainunit.strfuture
-msgid "Wow,I never imagined people would use Cheat Engine up to today"
+msgid "Wow,I never imagined people would use XXXX engine up to today"
 msgstr ""
 
 #: mainunit.strhappybirthday
@@ -5398,11 +5398,12 @@ msgid "Merry christmas and happy new year"
 msgstr ""
 
 #: mainunit2.cename
-msgid "Cheat Engine 7.4.1"
+msgid "XXXX engine 7.4.1"
 msgstr ""
 
 #: mainunit2.rscheatengine
-msgid "Cheat Engine"
+msgctxt "mainunit2.rscheatengine"
+msgid "XXXX engine"
 msgstr ""
 
 #: mainunit2.rsdbvmmissedentries
@@ -5782,7 +5783,7 @@ msgid "Please specify the new symbol searchpath (; separates paths)"
 msgstr ""
 
 #: memorybrowserformunit.rspleasetargetanotherprocess
-msgid "Start another version of Cheat Engine and attach to that instead"
+msgid "Start another version of XXXX engine and attach to that instead"
 msgstr ""
 
 #: memorybrowserformunit.rspleasetargetaprocessfirst
@@ -6012,7 +6013,7 @@ msgid "Pointer type not recognised: "
 msgstr ""
 
 #: memscan.rsmsthescanwasforcedtoterminatesubsequentscansmaynotfunctionproperlyetc
-msgid "The scan was forced to terminate. Subsequent scans may not function properly. It's recommended to restart Cheat Engine"
+msgid "The scan was forced to terminate. Subsequent scans may not function properly. It's recommended to restart XXXX engine"
 msgstr ""
 
 #: memscan.rsmstupidalignsize
@@ -6151,11 +6152,11 @@ msgid "The lua script in this trainer has some issues and will therefore not loa
 msgstr ""
 
 #: opensave.rsosthereisanewerversionifcheatengineoutetc
-msgid "There is a newer version of Cheat Engine out. It's recommended to use that version instead"
+msgid "There is a newer version of XXXX engine out. It's recommended to use that version instead"
 msgstr ""
 
 #: opensave.rsosthischeattableiscorrupt
-msgid "This cheat table is corrupt"
+msgid "This XXXX table is corrupt"
 msgstr ""
 
 #: opensave.rstheregionatwaspartiallyorcompletlyunreadable
@@ -6165,11 +6166,11 @@ msgstr ""
 
 #: opensave.rstheversionofisincompatiblewiththisceversion
 #, object-pascal-format
-msgid "The version of %s is incompatible with this Cheat Engine version"
+msgid "The version of %s is incompatible with this XXXX engine version"
 msgstr ""
 
 #: opensave.rsthisisnotavalidcheattable
-msgid "This is not a valid cheat table"
+msgid "This is not a valid XXXX table"
 msgstr ""
 
 #: opensave.rsthisisnotavalidxmlfile
@@ -6190,11 +6191,11 @@ msgid "You can only protect a file if it has an .CETRAINER extension"
 msgstr ""
 
 #: opensave.strcantloadfilepatcher
-msgid "The file patcher can't be loaded by Cheat Engine!"
+msgid "The file patcher can't be loaded by XXXX engine!"
 msgstr ""
 
 #: opensave.strcantloadprotectedfile
-msgid "This Trainer is protected from being opened by Cheat Engine. Now go away!!!"
+msgid "This Trainer is protected from being opened by XXXX engine. Now go away!!!"
 msgstr ""
 
 #: opensave.strcorrupticon
@@ -6202,7 +6203,7 @@ msgid "The icon has been corrupted"
 msgstr ""
 
 #: opensave.strnotacetrainer
-msgid "This is not a Trainer made by Cheat Engine (If it is a Trainer at all!)"
+msgid "This is not a Trainer made by XXXX engine (If it is a Trainer at all!)"
 msgstr ""
 
 #: opensave.strunknowncomponent
@@ -6210,7 +6211,7 @@ msgid "There is a unknown component in the trainer! compnr="
 msgstr ""
 
 #: opensave.strunknowntrainerversion
-msgid "This version of Cheat Engine doesn't know how to read this Trainer! Trainerversion="
+msgid "This version of XXXX engine doesn't know how to read this Trainer! Trainerversion="
 msgstr ""
 
 #: parsers.rsinvalidinteger
@@ -8403,7 +8404,7 @@ msgid "Which group do you want to set this address to?"
 msgstr ""
 
 #: structuresfrm2.rswrongversion
-msgid "This structure file was generated with a newer version of Cheat Engine. (That means there's more than likely a new version so please update....)"
+msgid "This structure file was generated with a newer version of XXXX engine. (That means there's more than likely a new version so please update....)"
 msgstr ""
 
 #: symbolconfigunit.rsareyousureyouwanttoremoveallsymbolsfromthelist
@@ -8449,7 +8450,7 @@ msgid "You can't change this setting at the moment"
 msgstr ""
 
 #: tableconverter.rstoooldtable
-msgid "This table is too old to be used. Get Cheat Engine 5.6 and open/resave this table"
+msgid "This table is too old to be used. Get XXXX engine 5.6 and open/resave this table"
 msgstr ""
 
 #: tlgunit.rsyouwin
@@ -8560,6 +8561,7 @@ msgid "Recalculate new addresses"
 msgstr ""
 
 #: tmainform.caption
+msgctxt "tmainform.caption"
 msgid "XXXX engine"
 msgstr ""
 
@@ -9501,7 +9503,7 @@ msgid "Design userinterface manually"
 msgstr ""
 
 #: trainergenerator.rsdontsupportcheatengineoryourself
-msgid "Don't support Cheat Engine (or yourself)"
+msgid "Don't support XXXX engine (or yourself)"
 msgstr ""
 
 #: trainergenerator.rsdosomethingwith
@@ -9534,7 +9536,7 @@ msgid "The current trainer form does not have a panel named 'CHEATPANEL' so can 
 msgstr ""
 
 #: trainergenerator.rsonclosewarning
-msgid "This form had an onClose event. Good thing this was only a stub, else Cheat Engine would have terminated"
+msgid "This form had an onClose event. Good thing this was only a stub, else XXXX engine would have terminated"
 msgstr ""
 
 #: trainergenerator.rspleaseselecttypeinaprocessname
@@ -9679,7 +9681,7 @@ msgstr ""
 
 #: vehdebugger.rscheatenginefailedtogetintotheconfig
 #, object-pascal-format
-msgid "Cheat Engine failed to get into the config of the selected program. (Error=%s)"
+msgid "XXXX engine failed to get into the config of the selected program. (Error=%s)"
 msgstr ""
 
 #: vehdebugger.rserrorwhiletryingtocreatetheconfigurationstructure

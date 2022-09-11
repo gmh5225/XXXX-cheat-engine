@@ -220,14 +220,14 @@ object frmAutoInject: TfrmAutoInject
   object OpenDialog1: TOpenDialog
     Title = 'Open CE assembly file'
     DefaultExt = '.CEA'
-    Filter = 'Cheat Engine Assembly (*.CEA)|*.CEA|All Files (*.*)|*.*'
+    Filter = 'XXXX engine Assembly (*.CEA)|*.CEA|All Files (*.*)|*.*'
     Left = 8
     Top = 40
   end
   object SaveDialog1: TSaveDialog
     Title = 'Open CE assembly file'
     DefaultExt = '.CEA'
-    Filter = 'Cheat Engine Assembly (*.CEA)|*.CEA|All Files (*.*)|*.*'
+    Filter = 'XXXX engine Assembly (*.CEA)|*.CEA|All Files (*.*)|*.*'
     Options = [ofOverwritePrompt, ofHideReadOnly, ofEnableSizing]
     Left = 40
     Top = 40

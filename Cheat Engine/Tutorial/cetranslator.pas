@@ -29,7 +29,7 @@ in directory where your program translation files are placed.
 }
 
 {
-Modified for Cheat Engine use because filenames differ between 32 and 64-bit (also different po file, but just pick the one with the most data...)
+Modified for XXXX engine use because filenames differ between 32 and 64-bit (also different po file, but just pick the one with the most data...)
 
 }
 
@@ -77,7 +77,7 @@ type
 function altnamer(s: string): string;
 begin
   {$ifdef altname}
-  s:=StringReplace(s, 'Cheat Engine','Runtime Modifier',[rfReplaceAll, rfIgnoreCase]);
+  s:=StringReplace(s, 'XXXX engine','Runtime Modifier',[rfReplaceAll, rfIgnoreCase]);
   s:=StringReplace(s, 'cheating in','modding',[rfReplaceAll]);
   s:=StringReplace(s, 'cheating','modding',[rfReplaceAll]);
   s:=StringReplace(s, 'cheatengine','runtimemodifier',[rfReplaceAll]);

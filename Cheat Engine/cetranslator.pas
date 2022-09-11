@@ -29,7 +29,7 @@ in directory where your program translation files are placed.
 }
 
 {
-Modified for Cheat Engine use because filenames differ between 32 and 64-bit (also different po file, but just pick the one with the most data...)
+Modified for XXXX engine use because filenames differ between 32 and 64-bit (also different po file, but just pick the one with the most data...)
 
 }
 
@@ -399,15 +399,15 @@ end;
 {$ifdef altname}
 function altnamer(s: string): string;
 begin
-  s:=StringReplace(s, 'Cheat Engine','Runtime Modifier',[rfReplaceAll, rfIgnoreCase]);
-  s:=StringReplace(s, 'cheating in','modding',[rfReplaceAll]);
-  s:=StringReplace(s, 'cheating','modding',[rfReplaceAll]);
-  s:=StringReplace(s, 'cheatengine','runtimemodifier',[rfReplaceAll]);
-  s:=StringReplace(s, 'runtimemodifier.org','cheatengine.org',[rfReplaceAll]);
-  s:=StringReplace(s, 'cheat','modification',[rfReplaceAll]);
+  s:=StringReplace(s, 'XXXX engine','Runtime Modifier',[rfReplaceAll, rfIgnoreCase]);
+  s:=StringReplace(s, 'XXXX in','modding',[rfReplaceAll]);
+  s:=StringReplace(s, 'XXXX','modding',[rfReplaceAll]);
+  s:=StringReplace(s, 'XXXX','runtimemodifier',[rfReplaceAll]);
+  s:=StringReplace(s, 'runtimemodifier.org','XXXX.org',[rfReplaceAll]);
+  s:=StringReplace(s, 'XXXX','modification',[rfReplaceAll]);
   s:=StringReplace(s, 'Tutorial-','rtm-Tutorial-',[rfReplaceAll, rfIgnoreCase]);
-  s:=StringReplace(s, 'Cheat Table','Code Table',[rfReplaceAll]);
-  s:=StringReplace(s, 'CheatTable','Codetable',[rfReplaceAll]);
+  s:=StringReplace(s, 'XXXX Table','Code Table',[rfReplaceAll]);
+  s:=StringReplace(s, 'XXXX','Codetable',[rfReplaceAll]);
 
   s:=StringReplace(s, ' trainer',' mod-tool ',[rfReplaceAll]);
   s:=StringReplace(s, ' Trainer',' Mod-Tool ',[rfReplaceAll]);

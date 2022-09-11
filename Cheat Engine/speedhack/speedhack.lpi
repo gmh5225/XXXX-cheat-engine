@@ -69,7 +69,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
-        <HostApplicationFilename Value="F:\svn\Cheat Engine\bin\speedhacktest-x86_64.exe"/>
+        <HostApplicationFilename Value="F:\svn\XXXX engine\bin\speedhacktest-x86_64.exe"/>
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>

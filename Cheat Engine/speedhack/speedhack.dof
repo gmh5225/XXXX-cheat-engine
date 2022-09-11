@@ -101,7 +101,7 @@ DebugSourceDirs=
 UsePackages=0
 [Parameters]
 RunParams=
-HostApplication=C:\svnx\Cheat Engine\speedhack\speedhacktest\speedhacktest.exe
+HostApplication=C:\svnx\XXXX engine\speedhack\speedhacktest\speedhacktest.exe
 Launcher=
 UseLauncher=0
 DebugCWD=
@@ -137,7 +137,7 @@ Comments=
 [HistoryLists\hlDebugSourcePath]
 Count=2
 Item0=.\SynEdit\Source\
-Item1=C:\svnx\Cheat Engine\SynEdit\Source\
+Item1=C:\svnx\XXXX engine\SynEdit\Source\
 [HistoryLists\hlConditionals]
 Count=12
 Item0=cemain;NOcrashtest;DEBUG

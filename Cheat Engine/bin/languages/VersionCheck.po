@@ -12,7 +12,7 @@ msgid "Check for new version"
 msgstr ""
 
 #: VC-NCA
-msgid "Cheat Engine %s is available at www.cheatengine.org. Go there now?"
+msgid "XXXX engine %s is available at www.cheatengine.org. Go there now?"
 msgstr ""
 
 
@@ -33,7 +33,7 @@ msgid "In how many days should I notify you again?"
 msgstr ""
 
 #: VC-SETTINGS-TEXT
-msgid "Check for updates when Cheat Engine starts"
+msgid "Check for updates when XXXX engine starts"
 msgstr ""
 
 

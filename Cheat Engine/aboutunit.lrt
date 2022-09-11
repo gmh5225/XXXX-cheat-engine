@@ -1,11 +1,11 @@
-TABOUT.CAPTION=About Cheat Engine
-TABOUT.GROUPBOX1.CAPTION=Cheat Engine
+TABOUT.CAPTION=About XXXX engine
+TABOUT.GROUPBOX1.CAPTION=XXXX engine
 TABOUT.LABEL2.CAPTION=Special thanks to:
 TABOUT.LABEL5.CAPTION=And all the other people that helped me out
 TABOUT.LABEL10.CAPTION=Script engine powered by Lua
 TABOUT.LBLDBVM.CAPTION=your system may or may not support dbvm
 TABOUT.BUTTON1.CAPTION=OK
-TABOUT.BUTTON2.HINT=If you like Cheat Engine and want to contribute something to the development, just send a donation using Paypal.
+TABOUT.BUTTON2.HINT=If you like XXXX engine and want to contribute something to the development, just send a donation using Paypal.
 TABOUT.BUTTON2.CAPTION=Donate
 TABOUT.LABEL21.CAPTION=Metael
 TABOUT.LABEL22.CAPTION=wh1t3y

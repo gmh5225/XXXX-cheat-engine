@@ -310,7 +310,7 @@ object frmUltimap: TfrmUltimap
           AnchorSideTop.Side = asrBottom
           Left = 8
           Height = 19
-          Hint = 'When enabled Cheat Engine will flush the data for each cpu instead of only when the buffer is full'
+          Hint = 'When enabled XXXX engine will flush the data for each cpu instead of only when the buffer is full'
           Top = 92
           Width = 126
           Caption = 'Preemptive flushing'

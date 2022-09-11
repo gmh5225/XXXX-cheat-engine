@@ -190,6 +190,9 @@
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
     <TargetName>ULTIMAP-64</TargetName>
     <OutDir>..\Cheat Engine\bin\</OutDir>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -198,6 +201,9 @@
     <TargetName>TenProtect64u</TargetName>
     <OutDir>..\..\Cheat Engine\bin</OutDir>
     <EnableInf2cat>false</EnableInf2cat>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug but signed|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -207,6 +213,8 @@
     <TargetName>ULTIMAP2-64</TargetName>
     <OutDir>..\..\Cheat Engine\bin</OutDir>
     <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -391,10 +399,12 @@
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) "d:\svn\cheat engine\bin\ultimap2-64.sys"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>copy to ce bin folder</Message>
+      <Message>
+      </Message>
     </PostBuildEvent>
     <Link>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
@@ -412,7 +422,8 @@
       </Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>create cab and sign it</Message>
+      <Message>
+      </Message>
     </PostBuildEvent>
     <Inf>
       <SpecifyDriverVerDirectiveVersion>true</SpecifyDriverVerDirectiveVersion>
@@ -430,10 +441,12 @@
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) "d:\svn\cheat engine\bin\ultimap2-64.sys"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>copy to ce bin folder</Message>
+      <Message>
+      </Message>
     </PostBuildEvent>
     <Inf>
       <SpecifyDriverVerDirectiveVersion>true</SpecifyDriverVerDirectiveVersion>

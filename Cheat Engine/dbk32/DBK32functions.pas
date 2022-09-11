@@ -3181,23 +3181,23 @@ begin
         if not fileexists(dataloc) then
         begin
 
-          servicename:='CEDRIVER73';
-          ultimapservicename:='ULTIMAP2';
-          processeventname:='DBKProcList60';
-          threadeventname:='DBKThreadList60';
+          servicename:='XEDRIVER73';
+          ultimapservicename:='XLTIMAP2';
+          processeventname:='XBKProcList60';
+          threadeventname:='XBKThreadList60';
 
           if iswow64 then
           begin
-            sysfile:='dbk64.sys';
-            ultimapsysfile:='ultimap2-64.sys';
+            sysfile:='xbk64.sys';
+            ultimapsysfile:='xltimap2-64.sys';
           end
           else
           begin
-            sysfile:='dbk32.sys';
+            sysfile:='xbk32.sys';
             ultimapsysfile:='';
           end;
 
-          vmx_p1_txt:='76543210';
+          vmx_p1_txt:='16543210';
           vmx_p2_txt:='fedcba98';
           vmx_p3_txt:='90909090';
 

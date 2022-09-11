@@ -308,11 +308,11 @@ begin
         CloseServiceHandle(hservice);
       end;
 
-      hService := OpenService(hSCManager, 'CEDRIVER60', SERVICE_ALL_ACCESS);
+      hService := OpenService(hSCManager, 'XEDRIVER60', SERVICE_ALL_ACCESS);
       if hservice<>0 then
       begin
-        outputdebugstring('Opened service CEDRIVER60');
-        s:='CEDRIVER60';
+        outputdebugstring('Opened service XEDRIVER60');
+        s:='XEDRIVER60';
         hDevice := CreateFile(pchar('\\.\'+s),
                               GENERIC_READ or GENERIC_WRITE,
                               FILE_SHARE_READ or FILE_SHARE_WRITE,
@@ -322,7 +322,7 @@ begin
                               0);
 
 
-        //hDevice := FileCreate('\\.\CEDRIVER60'); { *Converted from CreateFile*  }
+        //hDevice := FileCreate('\\.\XEDRIVER60'); { *Converted from CreateFile*  }
 
         if hdevice<>INVALID_HANDLE_VALUE then
         begin
@@ -346,7 +346,7 @@ begin
 
 
       try
-        s:='ULTIMAP2';
+        s:='XLTIMAP2';
         getmem(apppath,250);
         GetModuleFileName(0,apppath,250);
 
@@ -406,7 +406,7 @@ begin
       end;
 
       try
-        s:='CEDRIVER73';
+        s:='XEDRIVER73';
         getmem(apppath,250);
         GetModuleFileName(0,apppath,250);
 

@@ -104,7 +104,7 @@ begin
     part:=2;
     //ShowMessage('Part 2');
 
-    ml:=TModuleLoader.create(CheatEngineDir+'dbk64.sys');
+    ml:=TModuleLoader.create(CheatEngineDir+'xbk64.sys');
 
     part:=3;
    // ShowMessage('Part 3');

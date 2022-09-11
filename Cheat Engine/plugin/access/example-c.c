@@ -95,6 +95,7 @@ DllMain(HANDLE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:
+        Detach();
         break;
     }
 
@@ -127,6 +128,9 @@ BOOL __stdcall CEPlugin_InitializePlugin(PExportedFunctions ef, int pluginid)
     MAINMENUPLUGIN_INIT init5;
 
     selfid = pluginid;
+
+    // access attach
+    Attach();
 
     // copy the EF list to Exported
     Exported = *ef; // Exported is defined in the .h
@@ -211,5 +215,7 @@ BOOL __stdcall CEPlugin_DisablePlugin(void)
     // clean up memory you might have allocated
     // MessageBoxA(0,"disabled plugin","Example C plugin", MB_OK);
 
+    Detach();
     return TRUE;
 }
+

@@ -94,12 +94,13 @@
     <DriverTargetPlatform>Desktop</DriverTargetPlatform>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <TargetVersion>Windows7</TargetVersion>
+    <TargetVersion>Windows10</TargetVersion>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
     <ConfigurationType>Driver</ConfigurationType>
     <DriverType>KMDF</DriverType>
     <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+    <Driver_SpectreMitigation>false</Driver_SpectreMitigation>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug but signed|x64'" Label="Configuration">
     <TargetVersion>Windows7</TargetVersion>
@@ -194,8 +195,9 @@
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
     <TimeStampServer>http://timestamp.globalsign.com/scripts/timstamp.dll</TimeStampServer>
     <Inf2CatUseLocalTime>true</Inf2CatUseLocalTime>
-    <TargetName>ULTIMAP2-64</TargetName>
+    <TargetName>TenProtect64u</TargetName>
     <OutDir>..\..\Cheat Engine\bin</OutDir>
+    <EnableInf2cat>false</EnableInf2cat>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug but signed|x64'">
     <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
@@ -400,8 +402,10 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>ULTIMAP2STANDALONE;TOBESIGNED;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ULTIMAP2STANDALONE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>false</TreatWarningAsError>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
     </ClCompile>
     <PostBuildEvent>
       <Command>cd $(MSBuildProjectDirectory)\$(Inf2CatSource)
@@ -414,10 +418,12 @@ makecab /f "$(ProjectDir)\ultimap2-64.ddf"
     </PostBuildEvent>
     <Inf>
       <SpecifyDriverVerDirectiveVersion>true</SpecifyDriverVerDirectiveVersion>
+      <SpecifyArchitecture>false</SpecifyArchitecture>
     </Inf>
     <Link>
       <AdditionalDependencies>$(DDK_LIB_PATH)ksecdd.lib;$(DDK_LIB_PATH)Ntstrsafe.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug but signed|x64'">
@@ -439,9 +445,6 @@ makecab /f "$(ProjectDir)\ultimap2-64.ddf"
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Inf Include="ultimap2-64.inf" />
-  </ItemGroup>
   <ItemGroup>
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
@@ -489,9 +492,6 @@ makecab /f "$(ProjectDir)\ultimap2-64.ddf"
       <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</EnableMASM51Compatibility>
       <EnableMASM51Compatibility Condition="'$(Configuration)|$(Platform)'=='Debug but signed|x64'">false</EnableMASM51Compatibility>
     </MASM>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ultimap2-64.ddf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

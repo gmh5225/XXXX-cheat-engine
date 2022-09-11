@@ -4,6 +4,8 @@
 #include <ntddk.h>
 #include "DBKFunc.h"
 
+#define DbgPrint(...)
+
 /*
 #include "vmxhelper.h"
 #include "interruptHook.h"

@@ -36,6 +36,7 @@ PURANGE Ultimap2Ranges = NULL;
 
 PVOID *Ultimap2_DataReady;
 
+#define DbgPrint(...)
 
 #if (NTDDI_VERSION < NTDDI_VISTA)
 //implement this function for XP

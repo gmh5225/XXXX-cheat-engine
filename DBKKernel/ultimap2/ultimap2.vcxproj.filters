@@ -63,14 +63,4 @@
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="ultimap2-64.ddf">
-      <Filter>Driver Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Inf Include="ultimap2-64.inf">
-      <Filter>Driver Files</Filter>
-    </Inf>
-  </ItemGroup>
 </Project>

@@ -14,6 +14,8 @@
 #include "..\sigcheck.h"
 #endif
 
+#define DbgPrint(...)
+
 
 void UnloadDriver(PDRIVER_OBJECT DriverObject);
 

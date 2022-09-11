@@ -5,6 +5,8 @@
 #include "..\DBKFunc.h"
 
 
+#define DbgPrint(...)
+
 #define MSR_IA32_APICBASE               0x0000001b
 #define MSR_IA32_X2APIC_EOI				0x80b
 #define MSR_IA32_X2APIC_LVT_PMI			0x834

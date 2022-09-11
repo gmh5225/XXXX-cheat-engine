@@ -8,6 +8,8 @@
 #include "UltimapDrvr.h"
 #include "..\ultimap2.h"
 
+#define DbgPrint(...)
+
 NTSTATUS DispatchIoctl(IN PDEVICE_OBJECT DeviceObject, IN PIRP Irp)
 {
 	NTSTATUS ntStatus=STATUS_UNSUCCESSFUL;

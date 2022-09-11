@@ -3198,8 +3198,8 @@ begin
           end;
 
           vmx_p1_txt:='16543210';
-          vmx_p2_txt:='fedcba98';
-          vmx_p3_txt:='90909090';
+          vmx_p2_txt:='1edcba98';
+          vmx_p3_txt:='10909090';
 
         end
         else

@@ -306,9 +306,9 @@ void vmm_entry(void)
   //stack has been properly setup, so lets allow other cpu's to launch as well
   InitCommon();
 
-  Password1=0x76543210; //later to be filled in by user, sector on disk, or at compile time
-  Password2=0xfedcba98;
-  Password3=0x90909090;
+  Password1=0x16543210; //later to be filled in by user, sector on disk, or at compile time
+  Password2=0x1edcba98;
+  Password3=0x10909090;
 
   /*version 1 was the 32-bit only version,
    * 2 added 64-bit,

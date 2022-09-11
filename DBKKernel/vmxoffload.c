@@ -287,9 +287,9 @@ Runs at passive mode
 	vmm = MmMapLockedPagesSpecifyCache(DBVMMDL, KernelMode, MmCached, NULL, FALSE, 0);
 	
 	//default password when dbvm is just loaded (needed for adding extra ram)
-	vmx_password1 = 0x76543210;
-	vmx_password2 = 0xfedcba98;
-	vmx_password3 = 0x90909090;
+	vmx_password1 = 0x16543210;
+	vmx_password2 = 0x1edcba98;
+	vmx_password3 = 0x10909090;
 
 
 	if (vmm)

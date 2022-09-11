@@ -15,9 +15,9 @@ typedef UINT16 WORD, *PWORD;
 typedef void *PVOID;
 
 
-UINT64 password1=0x76543210;
-DWORD password2=0xfedcba98;
-UINT64 password3=0x90909090;
+UINT64 password1=0x16543210;
+DWORD password2=0x1edcba98;
+UINT64 password3=0x10909090;
 
 
 extern void enterVMM( void ); //declared in vmxoffloada.asm
@@ -664,17 +664,17 @@ void LaunchDBVM()
       Print(L"&vmcallinfo=%lx\n", &vmcallinfo);
 
       vmcallinfo.structsize=sizeof(vmcallinfo);
-      vmcallinfo.level2pass=0xfedcba98;
+      vmcallinfo.level2pass=0x1edcba98;
       vmcallinfo.command=0; //VMCALL_GETVERSION
 
-      UINT64 dbvmversion=dovmcall(&vmcallinfo, 0x76543210);
+      UINT64 dbvmversion=dovmcall(&vmcallinfo, 0x16543210);
       int r;
 
       vmcallinfo.structsize=sizeof(vmcallinfo);
-      vmcallinfo.level2pass=0xfedcba98;
+      vmcallinfo.level2pass=0x1edcba98;
       vmcallinfo.command=38; //VMCALL_GETMEM
       UINT64 freemem,fullpages;
-      dovmcall2(&vmcallinfo, 0x76543210, &freemem,&fullpages);
+      dovmcall2(&vmcallinfo, 0x16543210, &freemem,&fullpages);
 
 
 
@@ -700,9 +700,9 @@ void LaunchDBVM()
 
 
       vmcallinfo.structsize=sizeof(vmcallinfo);
-      vmcallinfo.level2pass=0xfedcba98;
+      vmcallinfo.level2pass=0x1edcba98;
       vmcallinfo.command=79; //HIDE DBVM MEMORY local cpu
-      dovmcall(&vmcallinfo, 0x76543210);
+      dovmcall(&vmcallinfo, 0x16543210);
 
 
 

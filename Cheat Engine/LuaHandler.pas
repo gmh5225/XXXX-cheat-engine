@@ -8555,7 +8555,7 @@ begin
   begin
     vmx_password1:=$16543210;
     vmx_password2:=$1edcba98;
-    vmx_password3:=$90909090;
+    vmx_password3:=$10909090;
   end;
 
 

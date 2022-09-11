@@ -176,12 +176,12 @@ vmcalltest_asm:
   sub rsp,12
 
   mov dword [rsp],12
-  mov dword [rsp+4],0xfedcba98
+  mov dword [rsp+4],0x1edcba98
   mov dword [rsp+8],0
 
   ;xchg bx,bx
   mov rax,rsp
-  mov rdx,0x76543210
+  mov rdx,0x16543210
   call [vmcall_instr]
 
   add rsp,8+12
@@ -211,7 +211,7 @@ vmcall_setintredirects:
   sub rsp,0x20
 
   mov dword [rsp],0x1c ;size of struct
-  mov dword [rsp+4],0xfedcba98 ;p2
+  mov dword [rsp+4],0x1edcba98 ;p2
   mov dword [rsp+8],9 ;VMCALL_REDIRECTINT1
 
   mov dword [rsp+0xc],1 ;idt redirect instead of intredirect
@@ -223,7 +223,7 @@ vmcall_setintredirects:
 
    ;int3
   mov rax,rsp
-  mov rdx,0x76543210 ;p1
+  mov rdx,0x16543210 ;p1
   call [vmcall_instr]
 
   mov rax,rsp

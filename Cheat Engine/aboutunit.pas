@@ -251,15 +251,15 @@ begin
     OutputDebugString('vmx_password2=0');
     OutputDebugString('vmx_password3=0');
     vmx_password1:=$16543210;
-    vmx_password2:=$fedcba98;
-    vmx_password3:=$90909090;
+    vmx_password2:=$1edcba98;
+    vmx_password3:=$10909090;
   end;
 
   if dbvm_version=0 then
   begin
     vmx_password1:=$16543210;
-    vmx_password2:=$fedcba98;
-    vmx_password3:=$90909090;
+    vmx_password2:=$1edcba98;
+    vmx_password3:=$10909090;
   end;
 
   if (dbvm_version>0) then

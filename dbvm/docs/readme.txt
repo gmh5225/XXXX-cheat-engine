@@ -3,8 +3,8 @@ When it's done loading remove the disk and your system will boot further
 
 To make use of vmcall you need to provide it with 2 passwords, the defaults
 are:
-password1 : 0x76543210
-password2 : 0xfedcba98
+password1 : 0x16543210
+password2 : 0x1edcba98
 
 But can be changed during runtime.
 

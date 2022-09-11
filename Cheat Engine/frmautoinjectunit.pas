@@ -156,7 +156,7 @@ type
   TBooleanArray = Array of Boolean;
 
 {
-The TDisassemblyLine originates from jgoemat  ( http://forum.cheatengine.org/viewtopic.php?t=566415 )
+The TDisassemblyLine originates from jgoemat  ( http://forum.XXXXengine.org/viewtopic.php?t=566415 )
 Originally it was just an Object but I changed it to a TObject because I think a
 standalone TDisassembler object might be more efficient reducing the amount of
 string parsing

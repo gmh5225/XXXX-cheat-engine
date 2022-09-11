@@ -345,7 +345,7 @@ begin
 
           if rb32.checked then
           begin
-            addfile(cheatenginedir+'cheatengine-i386.exe');
+            addfile(cheatenginedir+'XXXXengine-i386.exe');
 
             addfile(cheatenginedir+'lua53-32.dll');
             addfile(cheatenginedir+'win32\dbghelp.dll','win32');
@@ -360,7 +360,7 @@ begin
             begin
               addfile(cheatenginedir+'dbk32.sys');
               addfile(cheatenginedir+'dbk64.sys');
-              addfile(cheatenginedir+'cheatengine-i386.exe.sig');
+              addfile(cheatenginedir+'XXXXengine-i386.exe.sig');
             end;
 
             if cbModPlayer.checked then
@@ -372,7 +372,7 @@ begin
           end
           else
           begin
-            addfile(cheatenginedir+'cheatengine-x86_64.exe');
+            addfile(cheatenginedir+'XXXXengine-x86_64.exe');
             addfile(cheatenginedir+'lua53-64.dll');
 
             if cbSpeedhack.checked then
@@ -384,7 +384,7 @@ begin
             if cbKernelDebug.checked then
             begin
               addfile(cheatenginedir+'dbk64.sys');
-              addfile(cheatenginedir+'cheatengine-x86_64.exe.sig');
+              addfile(cheatenginedir+'XXXXengine-x86_64.exe.sig');
             end;
 
             if cbModPlayer.checked then

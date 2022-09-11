@@ -136,7 +136,7 @@ resourcestring
   rsLUA_DoScriptWasNotCalledRomTheMainThread = 'LUA_DoScript was not called '
     +'from the main thread';
   rsUndefinedLuaError = 'Undefined lua error';
-  rsCheatengineIsBeingAFag = 'Cheatengine is being a fag';
+  rsCheatengineIsBeingAFag = 'XXXXengine is being a fag';
 
   rsInvalidFloat = 'Invalid floating point string:%s';
   rsInvalidInt = 'Invalid integer:%s';

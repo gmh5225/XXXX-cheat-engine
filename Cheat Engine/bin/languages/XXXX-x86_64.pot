@@ -4470,7 +4470,7 @@ msgid "createfoundlist needs a memscan object as parameter"
 msgstr ""
 
 #: luahandler.rscheatengineisbeingafag
-msgid "Cheatengine is being a fag"
+msgid "XXXXengine is being a fag"
 msgstr ""
 
 #: luahandler.rsconditionalbreakpointerror

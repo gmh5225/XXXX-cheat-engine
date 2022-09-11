@@ -43,7 +43,7 @@ __thread int debugfd;
 __thread char* threadname;
 
 #define CESERVERVERSION 4
-char versionstring[]="CHEATENGINE Network 2.2";
+char versionstring[]="XXXXengine Network 2.2";
 
 ssize_t recvall (int s, void *buf, size_t size, int flags)
 {

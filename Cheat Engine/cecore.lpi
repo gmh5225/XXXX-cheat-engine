@@ -205,7 +205,7 @@
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
-      <Filename Value="..\ceandroid\workspace\CheatEngine\libs\armeabi\cecore"/>
+      <Filename Value="..\ceandroid\workspace\XXXXengine\libs\armeabi\cecore"/>
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>

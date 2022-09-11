@@ -7,7 +7,7 @@
       <MainUnit Value="0"/>
       <UseXPManifest Value="True"/>
       <XPManifest>
-        <TextName Value="CheatEngine.Speedhack.tester"/>
+        <TextName Value="XXXXengine.Speedhack.tester"/>
         <TextDesc Value="Something to test ce's speedhack on"/>
       </XPManifest>
     </General>

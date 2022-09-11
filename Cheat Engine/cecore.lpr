@@ -365,7 +365,7 @@ begin
     MainThread:=TMainThread.Create(false);
 
 
-    c:=env^.FindClass(env, 'org/cheatengine/cecore');  //'org/cheatengine/jnitest/cecore';
+    c:=env^.FindClass(env, 'org/xxxxengine/cecore');  //'org/xxxxengine/jnitest/cecore';
     env^.RegisterNatives(env, c, @jnimethods[0], methodcount);
     env^.DeleteLocalRef(env, c);
 

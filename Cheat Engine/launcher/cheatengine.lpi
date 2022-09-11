@@ -15,7 +15,7 @@
       <XPManifest>
         <ExecutionLevel Value="requireAdministrator"/>
         <TextName Value="XXXX engine.XXXX engine.Launcher"/>
-        <TextDesc Value="Launches the best suitable cheatengine-*.exe"/>
+        <TextDesc Value="Launches the best suitable XXXXengine-*.exe"/>
       </XPManifest>
       <Icon Value="0"/>
     </General>

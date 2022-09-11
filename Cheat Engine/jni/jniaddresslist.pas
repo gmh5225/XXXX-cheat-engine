@@ -343,9 +343,9 @@ end;
 const methodcount=10;
 var jnimethods: array [0..methodcount-1] of JNINativeMethod =(
   (name: 'GetCount'; signature: '()I'; fnPtr: @addresslist_getCount),
-  (name: 'GetEntry'; signature: '(I)Lorg/cheatengine/AddressListEntry;'; fnPtr: @addresslist_getEntry),
-  (name: 'SetEntry'; signature: '(ILorg/cheatengine/AddressListEntry;)V'; fnPtr: @addresslist_setEntry),
-  (name: 'AddEntry'; signature: '(Lorg/cheatengine/AddressListEntry;)I'; fnPtr: @addresslist_addEntry),
+  (name: 'GetEntry'; signature: '(I)Lorg/XXXXengine/AddressListEntry;'; fnPtr: @addresslist_getEntry),
+  (name: 'SetEntry'; signature: '(ILorg/XXXXengine/AddressListEntry;)V'; fnPtr: @addresslist_setEntry),
+  (name: 'AddEntry'; signature: '(Lorg/XXXXengine/AddressListEntry;)I'; fnPtr: @addresslist_addEntry),
   (name: 'SetEntryActive'; signature: '(IZ)Z'; fnPtr: @addresslist_setActive),
   (name: 'SetFreezeTimer'; signature: '(I)V'; fnPtr: @addresslist_setFreezeTimer),
   (name: 'DeleteEntry'; signature: '(I)V'; fnPtr: @addresslist_deleteEntry),

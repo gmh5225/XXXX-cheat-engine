@@ -5460,7 +5460,7 @@ msgid "Changed value"
 msgstr ""
 
 #: mainunit2.strcomparetofirstscan
-msgid "Compare to first scan"
+msgid "Compare to first Sxan"
 msgstr ""
 
 #: mainunit2.strcomparetolastscan
@@ -5493,7 +5493,7 @@ msgstr ""
 
 #: mainunit2.strfirstscan
 msgctxt "mainunit2.strfirstscan"
-msgid "First Scan"
+msgid "First Sxan"
 msgstr ""
 
 #: mainunit2.strignorevalue
@@ -5751,11 +5751,11 @@ msgstr ""
 
 #: memorybrowserformunit.rsmemoryviewercurrentlydebuggingthread
 #, object-pascal-format
-msgid "Memory Viewer - Currently debugging thread %s"
+msgid "M4mory Viewer - Currently debugging thread %s"
 msgstr ""
 
 #: memorybrowserformunit.rsmemoryviewerrunning
-msgid "Memory Viewer - Running"
+msgid "M4mory Viewer - Running"
 msgstr ""
 
 #: memorybrowserformunit.rsneedtorundissectcode

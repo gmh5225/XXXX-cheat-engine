@@ -131,6 +131,7 @@ msgid "The value %s could not be parsed"
 msgstr ""
 
 #: addresslist.rstype
+msgctxt "addresslist.rstype"
 msgid "Type"
 msgstr ""
 
@@ -2413,6 +2414,7 @@ msgid "%s is not a valid interval"
 msgstr ""
 
 #: formsettingsunit.rslanguages
+msgctxt "formsettingsunit.rslanguages"
 msgid "Languages"
 msgstr ""
 
@@ -2436,6 +2438,7 @@ msgid "New language set"
 msgstr ""
 
 #: formsettingsunit.rsnextscan
+msgctxt "formsettingsunit.rsnextscan"
 msgid "Next Scan"
 msgstr ""
 
@@ -2457,6 +2460,7 @@ msgid "Please boot with unsigned drivers allowed(F8 during boot), or sign the dr
 msgstr ""
 
 #: formsettingsunit.rsplugins
+msgctxt "formsettingsunit.rsplugins"
 msgid "Plugins"
 msgstr ""
 
@@ -2550,6 +2554,7 @@ msgid "Unknown Initial Value"
 msgstr ""
 
 #: formsettingsunit.rsunrandomizer
+msgctxt "formsettingsunit.rsunrandomizer"
 msgid "Unrandomizer"
 msgstr ""
 
@@ -2932,6 +2937,7 @@ msgid " DECOMPRESSOR:"
 msgstr ""
 
 #: frmexetrainergeneratorunit.rsdefault
+msgctxt "frmexetrainergeneratorunit.rsdefault"
 msgid "Default"
 msgstr ""
 
@@ -4657,6 +4663,7 @@ msgid "A luaserver with the name "
 msgstr ""
 
 #: mainunit.rsand
+msgctxt "mainunit.rsand"
 msgid "and"
 msgstr ""
 
@@ -4722,6 +4729,7 @@ msgid "Empty Recent Files List"
 msgstr ""
 
 #: mainunit.rscomparetosavedscan
+msgctxt "mainunit.rscomparetosavedscan"
 msgid "Compare to first/saved scan"
 msgstr ""
 
@@ -4747,6 +4755,7 @@ msgid "dbvm_watch failed"
 msgstr ""
 
 #: mainunit.rsdecimal
+msgctxt "mainunit.rsdecimal"
 msgid "Decimal"
 msgstr ""
 
@@ -4780,6 +4789,7 @@ msgid "Edit addresses"
 msgstr ""
 
 #: mainunit.rsenablespeedhack
+msgctxt "mainunit.rsenablespeedhack"
 msgid "Enable Speedhack"
 msgstr ""
 
@@ -4865,6 +4875,7 @@ msgid " , height="
 msgstr ""
 
 #: mainunit.rshex
+msgctxt "mainunit.rshex"
 msgid "Hex"
 msgstr ""
 
@@ -4933,6 +4944,7 @@ msgid "<Processing>"
 msgstr ""
 
 #: mainunit.rsprevious
+msgctxt "mainunit.rsprevious"
 msgid "Previous"
 msgstr ""
 
@@ -4950,6 +4962,7 @@ msgid "Remove selected address"
 msgstr ""
 
 #: mainunit.rsremoveselectedaddresses
+msgctxt "mainunit.rsremoveselectedaddresses"
 msgid "Remove selected addresses"
 msgstr ""
 
@@ -5029,6 +5042,7 @@ msgid "Set hotkeys"
 msgstr ""
 
 #: mainunit.rsshowasbinary
+msgctxt "mainunit.rsshowasbinary"
 msgid "Show as binary"
 msgstr ""
 
@@ -5037,6 +5051,7 @@ msgid "Show as decimal"
 msgstr ""
 
 #: mainunit.rsshowashexadecimal
+msgctxt "mainunit.rsshowashexadecimal"
 msgid "Show as hexadecimal"
 msgstr ""
 
@@ -5156,6 +5171,7 @@ msgid "Change these values to:"
 msgstr ""
 
 #: mainunit.strchangescript
+msgctxt "mainunit.strchangescript"
 msgid "Change script"
 msgstr ""
 
@@ -5209,6 +5225,7 @@ msgid ". Have you disabled 'System Integrity Protection'(SIP) yet?"
 msgstr ""
 
 #: mainunit.strforcerecheck
+msgctxt "mainunit.strforcerecheck"
 msgid "Force recheck symbols"
 msgstr ""
 
@@ -5474,6 +5491,7 @@ msgid "Failed to initialize the debugger"
 msgstr ""
 
 #: mainunit2.strfirstscan
+msgctxt "mainunit2.strfirstscan"
 msgid "First Scan"
 msgstr ""
 
@@ -7274,6 +7292,7 @@ msgid "Lowest known path:"
 msgstr ""
 
 #: pointerscannerfrm.rspsnetwork
+msgctxt "pointerscannerfrm.rspsnetwork"
 msgid "Network"
 msgstr ""
 
@@ -7620,6 +7639,7 @@ msgid "Are you sure you want to attach the debugger and not just open this proce
 msgstr ""
 
 #: processwindowunit.rscreateprocess
+msgctxt "processwindowunit.rscreateprocess"
 msgid "Create Process"
 msgstr ""
 
@@ -7699,6 +7719,7 @@ msgid "Copy disassembled output"
 msgstr ""
 
 #: savedisassemblyfrm.rssave
+msgctxt "savedisassemblyfrm.rssave"
 msgid "Save"
 msgstr ""
 
@@ -7977,6 +7998,7 @@ msgid "Create new structure from unchanged"
 msgstr ""
 
 #: structuresfrm2.rscut
+msgctxt "structuresfrm2.rscut"
 msgid "Cut"
 msgstr ""
 
@@ -8080,6 +8102,7 @@ msgid "P->"
 msgstr ""
 
 #: structuresfrm2.rspaste
+msgctxt "structuresfrm2.rspaste"
 msgid "Paste"
 msgstr ""
 
@@ -8433,11 +8456,997 @@ msgstr ""
 msgid "OMG, You must have cheated or don't have a life. (Although some people claim that thats the same)"
 msgstr ""
 
+#: tmainform.a1.caption
+msgid "a"
+msgstr ""
+
+#: tmainform.actautoassemble.caption
+msgid "actAutoAssemble"
+msgstr ""
+
+#: tmainform.actmemoryview.caption
+msgid "actMemoryView"
+msgstr ""
+
+#: tmainform.actopen.hint
+msgid "Open a cheat table or unprotected cetrainer"
+msgstr ""
+
+#: tmainform.actopendissectstructure.caption
+msgid "actOpenDissectStructure"
+msgstr ""
+
+#: tmainform.actopenluaengine.caption
+msgid "actOpenLuaEngine"
+msgstr ""
+
+#: tmainform.actsave.hint
+msgid "Save your current data. Save as .exe to create a standalone trainer"
+msgstr ""
+
+#: tmainform.address1.caption
+msgctxt "tmainform.address1.caption"
+msgid "Address"
+msgstr ""
+
+#: tmainform.advancedbutton.caption
+msgid "Advanced Options"
+msgstr ""
+
+#: tmainform.advancedbutton.hint
+msgid "Codelist and pause"
+msgstr ""
+
+#: tmainform.andlabel.caption
+msgctxt "tmainform.andlabel.caption"
+msgid "and"
+msgstr ""
+
+#: tmainform.b1.caption
+msgid "b"
+msgstr ""
+
+#: tmainform.browsethismemoryarrea1.caption
+msgctxt "tmainform.browsethismemoryarrea1.caption"
+msgid "Browse this memory region"
+msgstr ""
+
+#: tmainform.browsethismemoryregion1.caption
+msgctxt "tmainform.browsethismemoryregion1.caption"
+msgid "Browse this memory region"
+msgstr ""
+
+#: tmainform.browsethismemoryregioninthedisassembler1.caption
+msgctxt "tmainform.browsethismemoryregioninthedisassembler1.caption"
+msgid "Disassemble this memory region"
+msgstr ""
+
+#: tmainform.btnaddaddressmanually.caption
+msgid "Add Address Manually"
+msgstr ""
+
+#: tmainform.btnfirst.caption
+msgid "First Scan2"
+msgstr ""
+
+#: tmainform.btnmemoryview.caption
+msgid "Memory View"
+msgstr ""
+
+#: tmainform.btnnewscan.caption
+msgctxt "tmainform.btnnewscan.caption"
+msgid "First Scan"
+msgstr ""
+
+#: tmainform.btnnext.caption
+msgid "Next scan 2"
+msgstr ""
+
+#: tmainform.btnnextscan.caption
+msgctxt "tmainform.btnnextscan.caption"
+msgid "Next Scan"
+msgstr ""
+
+#: tmainform.btnsetspeedhack2.caption
+msgid "Apply"
+msgstr ""
+
+#: tmainform.c1.caption
+msgid "c"
+msgstr ""
+
+#: tmainform.calculatenewvaluepart21.caption
+msgid "Recalculate new addresses"
+msgstr ""
+
+#: tmainform.caption
+msgid "XXXX engine"
+msgstr ""
+
+#: tmainform.cbcasesensitive.caption
+msgid "Case sensitive"
+msgstr ""
+
+#: tmainform.cbcodepage.caption
+msgid "Codepage"
+msgstr ""
+
+#: tmainform.cbcomparetosavedscan.caption
+msgctxt "tmainform.cbcomparetosavedscan.caption"
+msgid "Compare to first/saved scan"
+msgstr ""
+
+#: tmainform.cbcopyonwrite.caption
+msgid "CopyOnWrite"
+msgstr ""
+
+#: tmainform.cbcopyonwrite.hint
+msgid ""
+"Unchecked:\n"
+"Do not scan copy-on-write memory\n"
+"\n"
+"Checked:\n"
+"Only scan copy-on-write memory\n"
+"\n"
+"Gray:\n"
+"Don't care if it's copy-on-write or not"
+msgstr ""
+
+#: tmainform.cbexecutable.caption
+msgid "Executable"
+msgstr ""
+
+#: tmainform.cbexecutable.hint
+msgid ""
+"Unchecked:\n"
+"Do not scan executable memory\n"
+"\n"
+"Checked:\n"
+"Only scan executable memory\n"
+"\n"
+"Gray:\n"
+"Don't care if it's executable or not"
+msgstr ""
+
+#: tmainform.cbfastscan.caption
+msgid "Fast Scan"
+msgstr ""
+
+#: tmainform.cbfastscan.hint
+msgid "Speeds up the scan and decreases useless results by skipping unaligned memory, or only scans addresses ending with specific digits"
+msgstr ""
+
+#: tmainform.cbfloatsimple.caption
+msgid "Simple values only"
+msgstr ""
+
+#: tmainform.cbhexadecimal.caption
+msgctxt "tmainform.cbhexadecimal.caption"
+msgid "Hex"
+msgstr ""
+
+#: tmainform.cbhexadecimal.hint
+msgid "When checked the value you type in is hexadecimal"
+msgstr ""
+
+#: tmainform.cbluaformula.caption
+msgid "Lua formula"
+msgstr ""
+
+#: tmainform.cbluaformula.hint
+msgid ""
+"When checked the value will be interpreted as a Lua script. \n"
+"local variables available: \n"
+"value, previousvalue\n"
+"\n"
+"example:\n"
+"value>5 and value~=8"
+msgstr ""
+
+#: tmainform.cbnewluastate.caption
+msgid "Separate Lua state"
+msgstr ""
+
+#: tmainform.cbnewluastate.hint
+msgid ""
+"When checked, the Lua environment used will be limited to just some basic functions and you won't have access to userdefined functions.\n"
+"The positive side is that this allows multiple threads to scan at the same time, so will be a lot faster"
+msgstr ""
+
+#: tmainform.cbnot.caption
+msgid "Not"
+msgstr ""
+
+#: tmainform.cbnot.hint
+msgid "When checked CE will find everything EXCEPT the value/range you've given"
+msgstr ""
+
+#: tmainform.cbpausewhilescanning.caption
+msgid "Pause the game while scanning"
+msgstr ""
+
+#: tmainform.cbpercentage.caption
+msgid "Percent"
+msgstr ""
+
+#: tmainform.cbrepeatuntilstopped.caption
+msgid "Repeat"
+msgstr ""
+
+#: tmainform.cbrepeatuntilstopped.hint
+msgid "Repeats the unchanged value scan until it gets stopped"
+msgstr ""
+
+#: tmainform.cbspeedhack.caption
+msgctxt "tmainform.cbspeedhack.caption"
+msgid "Enable Speedhack"
+msgstr ""
+
+#: tmainform.cbspeedhack.hint
+msgid "Enable speedhack"
+msgstr ""
+
+#: tmainform.cbunicode.caption
+msgid "UTF-16"
+msgstr ""
+
+#: tmainform.cbunrandomizer.caption
+msgctxt "tmainform.cbunrandomizer.caption"
+msgid "Unrandomizer"
+msgstr ""
+
+#: tmainform.cbwritable.caption
+msgid "Writable"
+msgstr ""
+
+#: tmainform.cbwritable.hint
+msgid ""
+"Unchecked:\n"
+"Do not scan writable memory\n"
+"\n"
+"Checked:\n"
+"Only scan writable memory\n"
+"\n"
+"Gray:\n"
+"Don't care if it's writable memory or not"
+msgstr ""
+
+#: tmainform.change1.caption
+msgid "Change record"
+msgstr ""
+
+#: tmainform.changescript1.caption
+msgctxt "tmainform.changescript1.caption"
+msgid "Change script"
+msgstr ""
+
+#: tmainform.commentbutton.caption
+msgid "Table Extras"
+msgstr ""
+
+#: tmainform.copy1.caption
+msgctxt "tmainform.copy1.caption"
+msgid "Copy"
+msgstr ""
+
+#: tmainform.copy2.caption
+msgctxt "tmainform.copy2.caption"
+msgid "Copy"
+msgstr ""
+
+#: tmainform.copyselectedaddresses1.caption
+msgid "Copy selected addresses"
+msgstr ""
+
+#: tmainform.creategroup.caption
+msgid "Create Header"
+msgstr ""
+
+#: tmainform.createprocess1.caption
+msgctxt "tmainform.createprocess1.caption"
+msgid "Create Process"
+msgstr ""
+
+#: tmainform.cut1.caption
+msgctxt "tmainform.cut1.caption"
+msgid "Cut"
+msgstr ""
+
+#: tmainform.cut2.caption
+msgctxt "tmainform.cut2.caption"
+msgid "Cut"
+msgstr ""
+
+#: tmainform.d1.caption
+msgid "d"
+msgstr ""
+
+#: tmainform.deletethisrecord1.caption
+msgid "Delete this record"
+msgstr ""
+
+#: tmainform.description1.caption
+msgctxt "tmainform.description1.caption"
+msgid "Description"
+msgstr ""
+
+#: tmainform.e1.caption
+msgid "e"
+msgstr ""
+
+#: tmainform.edit3.caption
+msgid "&Edit"
+msgstr ""
+
+#: tmainform.editsh2.text
+msgid "1"
+msgstr ""
+
+#: tmainform.edtalignment.text
+msgid "4"
+msgstr ""
+
+#: tmainform.file1.caption
+msgid "&File"
+msgstr ""
+
+#: tmainform.findoutwhataccessesthisaddress1.caption
+msgctxt "tmainform.findoutwhataccessesthisaddress1.caption"
+msgid "Find out what accesses this address"
+msgstr ""
+
+#: tmainform.forcerechecksymbols1.caption
+msgctxt "tmainform.forcerechecksymbols1.caption"
+msgid "Force recheck symbols"
+msgstr ""
+
+#: tmainform.foundcountlabel.caption
+msgctxt "tmainform.foundcountlabel.caption"
+msgid "0"
+msgstr ""
+
+#: tmainform.foundcountlabel.hint
+msgid "This shows the amount of addresses found"
+msgstr ""
+
+#: tmainform.foundlist3.columns[0].caption
+msgctxt "tmainform.foundlist3.columns[0].caption"
+msgid "Address"
+msgstr ""
+
+#: tmainform.foundlist3.columns[1].caption
+msgctxt "tmainform.foundlist3.columns[1].caption"
+msgid "Value"
+msgstr ""
+
+#: tmainform.foundlist3.columns[2].caption
+msgctxt "tmainform.foundlist3.columns[2].caption"
+msgid "Previous"
+msgstr ""
+
+#: tmainform.foundlist3.hint
+msgid "This list shows all the found addresses that matched your last scan"
+msgstr ""
+
+#: tmainform.freezealladdresses2.caption
+msgid "Toggle Selected Records"
+msgstr ""
+
+#: tmainform.fromaddress.text
+msgid "00000000"
+msgstr ""
+
+#: tmainform.gbscanoptions.caption
+msgid "Memory Scan Options"
+msgstr ""
+
+#: tmainform.helpindex1.caption
+msgid "XXXX engine Help"
+msgstr ""
+
+#: tmainform.label1.caption
+msgctxt "tmainform.label1.caption"
+msgid "Start"
+msgstr ""
+
+#: tmainform.label2.caption
+msgctxt "tmainform.label2.caption"
+msgid "Stop"
+msgstr ""
+
+#: tmainform.label54.caption
+msgid "Speed"
+msgstr ""
+
+#: tmainform.label6.caption
+msgctxt "tmainform.label6.caption"
+msgid "Found:"
+msgstr ""
+
+#: tmainform.lblcomparetosavedscan.caption
+msgid "<xxxx>"
+msgstr ""
+
+#: tmainform.lblscantype.caption
+msgid "Scan Type"
+msgstr ""
+
+#: tmainform.lblsh0.caption
+msgctxt "tmainform.lblsh0.caption"
+msgid "0"
+msgstr ""
+
+#: tmainform.lblsh20.caption
+msgid "500"
+msgstr ""
+
+#: tmainform.lblsigned.caption
+msgid ""
+"This table has been signed by\n"
+"Someone"
+msgstr ""
+
+#: tmainform.lblvaluetype.caption
+msgid "Value Type"
+msgstr ""
+
+#: tmainform.load1.caption
+msgid "Load"
+msgstr ""
+
+#: tmainform.menuitem1.caption
+msgid "Select All"
+msgstr ""
+
+#: tmainform.menuitem12.caption
+msgid "XXXX engine Tutorial (x86_64)"
+msgstr ""
+
+#: tmainform.menuitem15.caption
+msgid "XXXX engine Tutorial Games"
+msgstr ""
+
+#: tmainform.menuitem16.caption
+msgid "XXXX engine Tutorial (AArch64)"
+msgstr ""
+
+#: tmainform.menuitem2.caption
+msgid "New Item1"
+msgstr ""
+
+#: tmainform.menuitem7.caption
+msgid "Quit"
+msgstr ""
+
+#: tmainform.menuitem8.caption
+msgid "Open Process"
+msgstr ""
+
+#: tmainform.menuitem9.caption
+msgid "Generate generic trainer lua script from table"
+msgstr ""
+
+#: tmainform.mi3d.caption
+msgid "D3D"
+msgstr ""
+
+#: tmainform.miabout.caption
+msgctxt "tmainform.miabout.caption"
+msgid "About"
+msgstr ""
+
+#: tmainform.miaddaddress.caption
+msgid "Add selected addresses to the addresslist"
+msgstr ""
+
+#: tmainform.miaddfile.caption
+msgid "Add file"
+msgstr ""
+
+#: tmainform.miaddtab.caption
+msgid "Add scan tab"
+msgstr ""
+
+#: tmainform.miallowcollapse.caption
+msgid "Allow left and right arrow keys to collapse and expand"
+msgstr ""
+
+#: tmainform.mialwayshidechildren.caption
+msgid "Always hide children"
+msgstr ""
+
+#: tmainform.miasyncscript.caption
+msgid "Execute asynchronous"
+msgstr ""
+
+#: tmainform.miautoassembleerrormessage.caption
+msgid "<Error message here>"
+msgstr ""
+
+#: tmainform.mibindactivation.caption
+msgid "Activating this entry activates it's children"
+msgstr ""
+
+#: tmainform.mibinddeactivation.caption
+msgid "Deactivating this entry deactivates it's children"
+msgstr ""
+
+#: tmainform.michangecolor.caption
+msgid "Change Color"
+msgstr ""
+
+#: tmainform.michangevalue.caption
+msgid "Change value of selected addresses"
+msgstr ""
+
+#: tmainform.michangevalueback.caption
+msgid "Change value of selected addresses back to previous/saved value"
+msgstr ""
+
+#: tmainform.miclosetab.caption
+msgid "Close tab"
+msgstr ""
+
+#: tmainform.micompression.caption
+msgid "Compression"
+msgstr ""
+
+#: tmainform.micreateluaform.caption
+msgid "Create form"
+msgstr ""
+
+#: tmainform.midbvmfindwhatwritesoraccesses.caption
+msgid "DBVM Find out what writes or accesses this address"
+msgstr ""
+
+#: tmainform.midefinenewcustomtype.caption
+msgid "Define new custom type (Auto Assembler)"
+msgstr ""
+
+#: tmainform.midefinenewcustomtypelua.caption
+msgid "Define new custom type (LUA)"
+msgstr ""
+
+#: tmainform.mideletecustomtype.caption
+msgid "Delete selected custom type"
+msgstr ""
+
+#: tmainform.mideletesavedscanresults.caption
+msgid "Delete scanresult"
+msgstr ""
+
+#: tmainform.midisassemble.caption
+msgctxt "tmainform.midisassemble.caption"
+msgid "Disassemble this memory region"
+msgstr ""
+
+#: tmainform.midisplay2byte.caption
+msgctxt "tmainform.midisplay2byte.caption"
+msgid "2 Bytes"
+msgstr ""
+
+#: tmainform.midisplay4byte.caption
+msgctxt "tmainform.midisplay4byte.caption"
+msgid "4 Bytes"
+msgstr ""
+
+#: tmainform.midisplay8byte.caption
+msgctxt "tmainform.midisplay8byte.caption"
+msgid "8 Bytes"
+msgstr ""
+
+#: tmainform.midisplaybyte.caption
+msgctxt "tmainform.midisplaybyte.caption"
+msgid "Byte"
+msgstr ""
+
+#: tmainform.midisplaydefault.caption
+msgctxt "tmainform.midisplaydefault.caption"
+msgid "Default"
+msgstr ""
+
+#: tmainform.midisplaydouble.caption
+msgctxt "tmainform.midisplaydouble.caption"
+msgid "Double"
+msgstr ""
+
+#: tmainform.midisplayfloat.caption
+msgctxt "tmainform.midisplayfloat.caption"
+msgid "Float"
+msgstr ""
+
+#: tmainform.midisplayhex.caption
+msgctxt "tmainform.midisplayhex.caption"
+msgid "Hexadecimal"
+msgstr ""
+
+#: tmainform.midotnet.caption
+msgid ".Net"
+msgstr ""
+
+#: tmainform.mieditcustomtype.caption
+msgid "Edit selected custom type"
+msgstr ""
+
+#: tmainform.mienablelcldebug.caption
+msgid "Generate errorlogs"
+msgstr ""
+
+#: tmainform.miflfindwhataccesses.caption
+msgctxt "tmainform.miflfindwhataccesses.caption"
+msgid "Find out what accesses this address"
+msgstr ""
+
+#: tmainform.miflfindwhatwrites.caption
+msgctxt "tmainform.miflfindwhatwrites.caption"
+msgid "Find out what writes to this address"
+msgstr ""
+
+#: tmainform.miforgotscan.caption
+msgid "Reload the previous value list (Forgot value scan)"
+msgstr ""
+
+#: tmainform.mifoundlistpreferences.caption
+msgid "Preferences"
+msgstr ""
+
+#: tmainform.mifreezenegative.caption
+msgid "Freeze Negative"
+msgstr ""
+
+#: tmainform.mifreezepositive.caption
+msgid "Freeze Positive"
+msgstr ""
+
+#: tmainform.migeneratepointermap.caption
+msgid "Generate pointermap"
+msgstr ""
+
+#: tmainform.migetdotnetobjectlist.caption
+msgid "Get object list"
+msgstr ""
+
+#: tmainform.migroupconfig.caption
+msgid "Group config"
+msgstr ""
+
+#: tmainform.mihelp.caption
+msgid "&Help"
+msgstr ""
+
+#: tmainform.mihidechildren.caption
+msgid "Hide children when deactivated"
+msgstr ""
+
+#: tmainform.mihookd3d.caption
+msgid "Hook Direct3D"
+msgstr ""
+
+#: tmainform.milanguages.caption
+msgctxt "tmainform.milanguages.caption"
+msgid "Languages"
+msgstr ""
+
+#: tmainform.miloadrecent.caption
+msgid "Load Recent"
+msgstr ""
+
+#: tmainform.milockmouseingame.caption
+msgid "Lock mouse in game window"
+msgstr ""
+
+#: tmainform.miluadocumentation.caption
+msgid "Lua documentation"
+msgstr ""
+
+#: tmainform.mimanualexpandcollapse.caption
+msgid "Manual expand/collapse"
+msgstr ""
+
+#: tmainform.minetwork.caption
+msgctxt "tmainform.minetwork.caption"
+msgid "Network"
+msgstr ""
+
+#: tmainform.mionlyshowcurrentcomparetocolumn.caption
+msgid "Only show current \"compare to\" column"
+msgstr ""
+
+#: tmainform.miopenfile.caption
+msgid "Open File"
+msgstr ""
+
+#: tmainform.mipresetall.caption
+msgid "Preset: Scan all memory"
+msgstr ""
+
+#: tmainform.mipresetwritable.caption
+msgid "Preset: Scan writable memory"
+msgstr ""
+
+#: tmainform.mirecursivesetvalue.caption
+msgid "Setting a value to this entry sets same value to children"
+msgstr ""
+
+#: tmainform.mirenametab.caption
+msgctxt "tmainform.mirenametab.caption"
+msgid "Rename"
+msgstr ""
+
+#: tmainform.miresetrange.caption
+msgid "Reset range"
+msgstr ""
+
+#: tmainform.miresyncformswithlua.caption
+msgid "Resynchronize forms with Lua"
+msgstr ""
+
+#: tmainform.misave.caption
+msgctxt "tmainform.misave.caption"
+msgid "Save"
+msgstr ""
+
+#: tmainform.misavefile.caption
+msgid "Save File"
+msgstr ""
+
+#: tmainform.misavescanresults.caption
+msgid "Save current scanresults"
+msgstr ""
+
+#: tmainform.miscandirtyonly.caption
+msgid "Scan changed regions only"
+msgstr ""
+
+#: tmainform.miscanpagedonly.caption
+msgid "Scan paged (physical) memory only"
+msgstr ""
+
+#: tmainform.misetcrosshair.caption
+msgid "Set custom crosshair"
+msgstr ""
+
+#: tmainform.misetdropdownoptions.caption
+msgid "Set/Change dropdown selection options"
+msgstr ""
+
+#: tmainform.misetupsnapshotkeys.caption
+msgid "Start and configure snapshot recording"
+msgstr ""
+
+#: tmainform.mishowasbinary.caption
+msgctxt "tmainform.mishowasbinary.caption"
+msgid "Show as binary"
+msgstr ""
+
+#: tmainform.mishowassigned.caption
+msgid "Show as signed"
+msgstr ""
+
+#: tmainform.mishowcustomtypedebug.caption
+msgid "Show custom type debug info"
+msgstr ""
+
+#: tmainform.mishowluascript.caption
+msgid "Show Cheat Table Lua Script"
+msgstr ""
+
+#: tmainform.mishowpreviousvalue.caption
+msgid "Show previous value column(s)"
+msgstr ""
+
+#: tmainform.misigntable.caption
+msgid "Sign table"
+msgstr ""
+
+#: tmainform.misnapshothandler.caption
+msgid "Snapshot handler"
+msgstr ""
+
+#: tmainform.mitable.caption
+msgid "Table"
+msgstr ""
+
+#: tmainform.mitutorial.caption
+msgid "XXXX engine Tutorial"
+msgstr ""
+
+#: tmainform.miundovalue.caption
+msgid "Undo last edit"
+msgstr ""
+
+#: tmainform.miwireframe.caption
+msgid "Toggle wireframe mode"
+msgstr ""
+
+#: tmainform.mizbuffer.caption
+msgid "Toggle disabled zbuffer"
+msgstr ""
+
+#: tmainform.mizeroterminate.caption
+msgid "Zero-Terminate string"
+msgstr ""
+
+#: tmainform.new1.caption
+msgid "Clear list"
+msgstr ""
+
+#: tmainform.ools1.caption
+msgid "&Tools"
+msgstr ""
+
+#: tmainform.openprocess1.caption
+msgid "Open Process window"
+msgstr ""
+
+#: tmainform.paste1.caption
+msgctxt "tmainform.paste1.caption"
+msgid "Paste"
+msgstr ""
+
+#: tmainform.paste2.caption
+msgctxt "tmainform.paste2.caption"
+msgid "Paste"
+msgstr ""
+
+#: tmainform.plugins1.caption
+msgctxt "tmainform.plugins1.caption"
+msgid "Plugins"
+msgstr ""
+
+#: tmainform.plugins2.caption
+msgid "P&lugins"
+msgstr ""
+
+#: tmainform.pointerscanforthisaddress1.caption
+msgid "Pointer scan for this address"
+msgstr ""
+
+#: tmainform.process1.caption
+msgid "&Process"
+msgstr ""
+
+#: tmainform.processlabel.caption
+msgid "No Process Selected"
+msgstr ""
+
+#: tmainform.progressbar.hint
+msgid "This shows how far XXXX engine is with searching"
+msgstr ""
+
+#: tmainform.rbbit.caption
+msgid "Bits"
+msgstr ""
+
+#: tmainform.rbdec.caption
+msgctxt "tmainform.rbdec.caption"
+msgid "Decimal"
+msgstr ""
+
+#: tmainform.rbfsmaligned.caption
+msgid "Alignment"
+msgstr ""
+
+#: tmainform.rbfsmaligned.hint
+msgid "When set and fastscan is enabled will scan the memory address if it is dividable by the given value"
+msgstr ""
+
+#: tmainform.rbfsmlastdigts.caption
+msgid "Last Digits"
+msgstr ""
+
+#: tmainform.rbfsmlastdigts.hint
+msgid "When set and fastscan is enabled will only scan and return addresses that end with the given digits"
+msgstr ""
+
+#: tmainform.removeselectedaddresses1.caption
+msgctxt "tmainform.removeselectedaddresses1.caption"
+msgid "Remove selected addresses"
+msgstr ""
+
+#: tmainform.rt1.caption
+msgid "Rounded (default)"
+msgstr ""
+
+#: tmainform.rt2.caption
+msgid "Rounded (extreme)"
+msgstr ""
+
+#: tmainform.rt3.caption
+msgid "Truncated"
+msgstr ""
+
+#: tmainform.save1.caption
+msgid "Save As..."
+msgstr ""
+
+#: tmainform.sbopenprocess.hint
+msgid "Select a process to open"
+msgstr ""
+
+#: tmainform.scantext.caption
+msgctxt "tmainform.scantext.caption"
+msgid "Scan Value"
+msgstr ""
+
+#: tmainform.scantext2.caption
+msgctxt "tmainform.scantext2.caption"
+msgid "Scan Value"
+msgstr ""
+
+#: tmainform.scantype.text
+msgid "Exact value"
+msgstr ""
+
+#: tmainform.selectallitems1.caption
+msgid "Select all items"
+msgstr ""
+
+#: tmainform.setbreakpoint1.caption
+msgctxt "tmainform.setbreakpoint1.caption"
+msgid "Find out what writes to this address"
+msgstr ""
+
+#: tmainform.sethotkey1.caption
+msgid "Assign Hotkey"
+msgstr ""
+
+#: tmainform.settings1.caption
+msgctxt "tmainform.settings1.caption"
+msgid "Settings"
+msgstr ""
+
+#: tmainform.settingsbutton.caption
+msgctxt "tmainform.settingsbutton.caption"
+msgid "Settings"
+msgstr ""
+
+#: tmainform.showashexadecimal1.caption
+msgctxt "tmainform.showashexadecimal1.caption"
+msgid "Show as hexadecimal"
+msgstr ""
+
+#: tmainform.smarteditaddresses1.caption
+msgid "Smart edit address(es)"
+msgstr ""
+
+#: tmainform.speedbutton2.hint
+msgid "Delete all addresses from the list"
+msgstr ""
+
+#: tmainform.speedbutton3.hint
+msgid "Copy all selected items to the address list"
+msgstr ""
+
+#: tmainform.toaddress.text
+msgid "ffffffff"
+msgstr ""
+
+#: tmainform.type1.caption
+msgctxt "tmainform.type1.caption"
+msgid "Type"
+msgstr ""
+
+#: tmainform.undoscan.caption
+msgid "Undo Scan"
+msgstr ""
+
+#: tmainform.value1.caption
+msgctxt "tmainform.value1.caption"
+msgid "Value"
+msgstr ""
+
+#: tmainform.vartype.text
+msgctxt "tmainform.vartype.text"
+msgid "Binary"
+msgstr ""
+
 #: trainergenerator.rsaaaaw
 msgid "aaaaw :("
 msgstr ""
 
 #: trainergenerator.rsabout
+msgctxt "trainergenerator.rsabout"
 msgid "About"
 msgstr ""
 

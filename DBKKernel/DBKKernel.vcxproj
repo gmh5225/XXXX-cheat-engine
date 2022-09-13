@@ -325,6 +325,7 @@ makecab /f "$(ProjectDir)\dbk64.ddf"
     <ClCompile Include="DBKFunc.c" />
     <ClCompile Include="debugger.c" />
     <ClCompile Include="deepkernel.c" />
+    <ClCompile Include="HideDriver\HideDriver.c" />
     <ClCompile Include="interruptHook.c" />
     <ClCompile Include="IOPLDispatcher.c" />
     <ClCompile Include="memscan.c" />
@@ -353,6 +354,7 @@ makecab /f "$(ProjectDir)\dbk64.ddf"
     <ClInclude Include="deepkernel.h" />
     <ClInclude Include="extradefines.h" />
     <ClInclude Include="extraimports.h" />
+    <ClInclude Include="HideDriver\HideDriver.h" />
     <ClInclude Include="interruptHook.h" />
     <ClInclude Include="IOPLDispatcher.h" />
     <ClInclude Include="kfiles.h" />

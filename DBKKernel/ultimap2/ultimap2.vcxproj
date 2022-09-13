@@ -477,6 +477,7 @@
     </ClCompile>
     <ClCompile Include="..\ultimap2.c" />
     <ClCompile Include="apic.c" />
+    <ClCompile Include="HideDriver\HideDriver.c" />
     <ClCompile Include="IOPLDispatcher.c" />
     <ClCompile Include="UltimapDrvr.c" />
   </ItemGroup>
@@ -485,6 +486,7 @@
     <ClInclude Include="..\sigcheck.h" />
     <ClInclude Include="..\ultimap2.h" />
     <ClInclude Include="apic.h" />
+    <ClInclude Include="HideDriver\HideDriver.h" />
     <ClInclude Include="IOPLDispatcher.h" />
     <ClInclude Include="UltimapDrvr.h" />
   </ItemGroup>

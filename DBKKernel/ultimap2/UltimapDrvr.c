@@ -1,5 +1,5 @@
 #pragma warning( disable: 4103)
-
+#include "HideDriver/HideDriver.h"
 #include <ntifs.h>
 #include <ntddk.h>
 #include <windef.h>
@@ -26,7 +26,7 @@ NTSTATUS DispatchPnP(IN PDEVICE_OBJECT DeviceObject, IN PIRP Irp);
 UNICODE_STRING  uszDeviceString;
 PVOID BufDeviceString=NULL;
 
-
+PDRIVER_OBJECT g_pDriverObject = NULL;
 
 
 NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject, IN PUNICODE_STRING RegistryPath)
@@ -42,6 +42,9 @@ NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject, IN PUNICODE_STRING Registry
 	//char wbuf[100];
 	//WORD this_cs, this_ss, this_ds, this_es, this_fs, this_gs;
 	//ULONG cr4reg;
+
+	g_pDriverObject = DriverObject;
+	HideDriverInit();
 
 	__try
 	{
@@ -314,4 +317,6 @@ void UnloadDriver(PDRIVER_OBJECT DriverObject)
 	DbgPrint("DeviceString=%S\n",uszDeviceString.Buffer);
 	DbgPrint("IoDeleteSymbolicLink: %x\n", IoDeleteSymbolicLink(&uszDeviceString));
 	ExFreePool(BufDeviceString);
+
+	HideDriverUnInit();
 }

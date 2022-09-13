@@ -23,6 +23,9 @@
     <Filter Include="32-bit asm">
       <UniqueIdentifier>{5debb8e3-80d2-4c52-aad7-75c2a7686801}</UniqueIdentifier>
     </Filter>
+    <Filter Include="HideDriver">
+      <UniqueIdentifier>{63cbf47d-5ba0-4bc0-8db8-8a83ada820da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DBKDrvr.c">
@@ -72,6 +75,9 @@
     </ClCompile>
     <ClCompile Include="ultimap2\apic.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HideDriver\HideDriver.c">
+      <Filter>HideDriver</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="ultimap2\apic.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HideDriver\HideDriver.h">
+      <Filter>HideDriver</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

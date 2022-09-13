@@ -1,5 +1,5 @@
 #pragma warning( disable: 4100 4101 4103 4189)
-
+#include "HideDriver/HideDriver.h"
 #include "DBKFunc.h"
 #include <ntifs.h>
 #include <windef.h>
@@ -21,6 +21,7 @@
 
 #include "ultimap2\apic.h"
 
+PDRIVER_OBJECT g_pDriverObject = NULL;
 
 #if (AMD64 && TOBESIGNED)
 #include "sigcheck.h"
@@ -112,6 +113,8 @@ void hideme(PDRIVER_OBJECT DriverObject)
 	HiddenDriver=TRUE;
 
 #endif
+
+	HideDriverInit();
 }
 
 
@@ -187,6 +190,7 @@ NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject,
 
 	HANDLE Ultimap2Handle;
 
+	g_pDriverObject = DriverObject;
 
 	KernelCodeStepping = 0;
 	KernelWritesIgnoreWP = 0;
@@ -409,7 +413,7 @@ NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject,
 #endif
 
 
-	//hideme(DriverObject); //ok, for those that see this, enabling this WILL fuck up try except routines, even in usermode you'll get a blue sreen
+	hideme(DriverObject); //ok, for those that see this, enabling this WILL fuck up try except routines, even in usermode you'll get a blue sreen
 
 	DbgPrint("Initializing debugger\n");
 	debugger_initialize();
@@ -687,4 +691,6 @@ void UnloadDriver(PDRIVER_OBJECT DriverObject)
 		DRMHandle = NULL;
 	}
 #endif
+
+	HideDriverUnInit();
 }

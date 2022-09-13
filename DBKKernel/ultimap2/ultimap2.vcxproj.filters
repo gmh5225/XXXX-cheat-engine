@@ -17,6 +17,9 @@
       <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
       <Extensions>inf;inv;inx;mof;mc;</Extensions>
     </Filter>
+    <Filter Include="HideDriver">
+      <UniqueIdentifier>{81df805e-7f67-4695-b56d-4d1f1fc39468}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="UltimapDrvr.c">
@@ -37,6 +40,9 @@
     <ClCompile Include="..\sigcheck.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HideDriver\HideDriver.c">
+      <Filter>HideDriver</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="apic.h">
@@ -56,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="..\sigcheck.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HideDriver\HideDriver.h">
+      <Filter>HideDriver</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

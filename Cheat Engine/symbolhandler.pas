@@ -365,11 +365,14 @@ type
 
     //userdefined symbols
     function DeleteUserdefinedSymbol(symbolname:string):boolean;
+    procedure DeleteAllUserdefinedSymbols;
     function GetUserdefinedSymbolByName(symbolname:string):ptrUint;
     function SetUserdefinedSymbolAllocSize(symbolname:string; size: dword; preferedaddress: ptruint=0): boolean;
     function GetUserdefinedSymbolByAddress(address:ptrUint):string;
     procedure AddUserdefinedSymbol(addressstring: string; symbolname: string; donotsave: boolean=false);
-    procedure EnumerateUserdefinedSymbols(list:tstrings);
+    procedure EnumerateUserdefinedSymbols(var list: TUserdefinedSymbolsList); overload;
+    procedure EnumerateUserdefinedSymbols(list:tstrings); overload;
+
 
     function ParseAsPointer(s: string; list:tstrings): boolean;
     function ParseRange(s: string; var start: QWORD; var stop: QWORD): boolean;
@@ -398,6 +401,7 @@ type
 
     function getLastModuleListUpdateTime: qword; //poll this when using async modulelist updates if you do wish to know when it finishes
 
+    procedure StopSymbolLoaderThread;
 
 
     constructor create;
@@ -1166,6 +1170,34 @@ begin
     CV_AMD64_R13    : result:='R13';
     CV_AMD64_R14    : result:='R14';
     CV_AMD64_R15    : result:='R15';
+
+    CV_AMD64_R8B    : result:='R8B';
+    CV_AMD64_R9B    : result:='R9B';
+    CV_AMD64_R10B   : result:='R10B';
+    CV_AMD64_R11B   : result:='R11B';
+    CV_AMD64_R12B   : result:='R12B';
+    CV_AMD64_R13B   : result:='R13B';
+    CV_AMD64_R14B   : result:='R14B';
+    CV_AMD64_R15B   : result:='R15B';
+
+    CV_AMD64_R8W    : result:='R8W';
+    CV_AMD64_R9W    : result:='R9W';
+    CV_AMD64_R10W   : result:='R10W';
+    CV_AMD64_R11W   : result:='R11W';
+    CV_AMD64_R12W   : result:='R12W';
+    CV_AMD64_R13W   : result:='R13W';
+    CV_AMD64_R14W   : result:='R14W';
+    CV_AMD64_R15W   : result:='R15W';
+
+    CV_AMD64_R8D    : result:='R8D';
+    CV_AMD64_R9D    : result:='R9D';
+    CV_AMD64_R10D   : result:='R10D';
+    CV_AMD64_R11D   : result:='R11D';
+    CV_AMD64_R12D   : result:='R12D';
+    CV_AMD64_R13D   : result:='R13D';
+    CV_AMD64_R14D   : result:='R14D';
+    CV_AMD64_R15D   : result:='R15D';
+
     CV_REG_EAX      : result:='EAX';
     CV_REG_ECX      : result:='ECX';
     CV_REG_EDX      : result:='EDX';
@@ -1175,7 +1207,7 @@ begin
     CV_REG_ESI      : result:='ESI';
     CV_REG_EDI      : result:='EDI';
     else
-      result:='?';
+      result:='? ('+inttostr(reg)+')';
   end;
 
 
@@ -3652,6 +3684,13 @@ begin
   end;
 end;
 
+procedure TSymhandler.DeleteAllUserdefinedSymbols;
+begin
+  userdefinedsymbolsCS.enter;
+  userdefinedsymbolspos:=0;
+  userdefinedsymbolsCS.leave;
+end;
+
 
 function TSymhandler.DeleteUserdefinedSymbol(symbolname:string):boolean;
 var i,j: integer;
@@ -3663,12 +3702,6 @@ begin
       if uppercase(userdefinedsymbols[i].symbolname)=uppercase(symbolname) then
       begin
         //found it
-
-        {       NO, not anymore
-        //check if it had a alloc, if so, free it
-        if (userdefinedsymbols[i].allocsize>0) and (userdefinedsymbols[i].processid=processid) then
-          VirtualFreeEx(processhandle,pointer(userdefinedsymbols[i].address),0,MEM_RELEASE);}
-
         //now move up all the others and decrease the list
         for j:=i to userdefinedsymbolspos-2 do
           userdefinedsymbols[j]:=userdefinedsymbols[j+1];
@@ -3878,6 +3911,20 @@ begin
 
   if assigned(UserdefinedSymbolCallback) then
     UserdefinedSymbolCallback();
+end;
+
+procedure TSymhandler.EnumerateUserdefinedSymbols(var list: TUserdefinedSymbolsList);
+var i: integer;
+begin
+  userdefinedsymbolsCS.enter;
+  try
+    setlength(list, userdefinedsymbolspos);
+    for i:=0 to userdefinedsymbolspos-1 do
+      list[i]:=userdefinedsymbols[i];
+
+  finally
+    userdefinedsymbolsCS.Leave;
+  end;
 end;
 
 procedure TSymhandler.EnumerateUserdefinedSymbols(list:tstrings);
@@ -6217,6 +6264,21 @@ function TSymhandler.getMainSymbolList: TSymbolListHandler;
 begin
   exit(symbollist);
 end;
+
+procedure TSymhandler.StopSymbolLoaderThread;
+begin
+  symbolloadervalid.Beginread;
+  try
+    if symbolloaderthread<>nil then
+    begin
+      symbolloaderthread.Terminate;
+      symbolloaderthread.WaitFor;
+    end;
+  finally
+    symbolloadervalid.Endread;
+  end;
+end;
+
 
 destructor TSymhandler.destroy;
 begin

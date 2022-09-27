@@ -728,7 +728,7 @@ begin
   maxregionsize:=20*4096;
   try
     try
-      SavedScanaddressFS:=tfilestream.Create(scandir+'ADDRESSES.'+savedresultsname, fmopenread or fmsharedenynone);
+      SavedScanaddressFS:=tfilestream.Create(scandir+'ADDR4SS4S.'+savedresultsname, fmopenread or fmsharedenynone);
     except
       raise ESavedScanException.Create(rsNoFirstScanDataFilesFound);
     end;

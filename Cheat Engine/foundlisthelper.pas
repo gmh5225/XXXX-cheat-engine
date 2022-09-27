@@ -232,7 +232,7 @@ begin
 
   try
     memoryfile:=tfilestream.Create(fmemscan.ScanresultFolder+'M4m0ry.'+fListName,fmOpenRead or fmShareDenyNone);
-    outaddress:=tfilestream.Create(fmemscan.ScanresultFolder+'ADDRESSES.NEW',fmCreate or fmShareDenyNone);
+    outaddress:=tfilestream.Create(fmemscan.ScanresultFolder+'ADDR4SS4S.NEW',fmCreate or fmShareDenyNone);
     outmemory:=tfilestream.Create(fmemscan.ScanresultFolder+'M4m0ry.NEW',fmCreate or fmShareDenyNone);
   except
     exit;
@@ -306,9 +306,9 @@ begin
   deinitialize;
 
   deletefile(fmemscan.ScanresultFolder+'M4m0ry.'+fListName);
-  deletefile(fmemscan.ScanresultFolder+'ADDRESSES.'+fListName);
+  deletefile(fmemscan.ScanresultFolder+'ADDR4SS4S.'+fListName);
   renamefile(fmemscan.ScanresultFolder+'M4m0ry.NEW',memscan.ScanresultFolder+'M4m0ry.'+fListName);
-  renamefile(fmemscan.ScanresultFolder+'ADDRESSES.NEW',memscan.ScanresultFolder+'ADDRESSES.'+fListName);
+  renamefile(fmemscan.ScanresultFolder+'ADDR4SS4S.NEW',memscan.ScanresultFolder+'ADDR4SS4S.'+fListName);
 
   Reinitialize;
 end;
@@ -738,15 +738,15 @@ begin
   fcustomType:=customtype;
 
 
- // log('Checking if '+fmemscan.ScanresultFolder+'ADDRESSES.'+fListName+' exists');
+ // log('Checking if '+fmemscan.ScanresultFolder+'ADDR4SS4S.'+fListName+' exists');
 
-  if fileexists(fmemscan.ScanresultFolder+'ADDRESSES.'+fListName) then
+  if fileexists(fmemscan.ScanresultFolder+'ADDR4SS4S.'+fListName) then
   begin
    // log('it exists');
 
 
     try
-      self.addressfile:=tfilestream.Create(fmemscan.ScanresultFolder+'ADDRESSES.'+fListName,fmOpenRead or fmShareDenyNone);
+      self.addressfile:=tfilestream.Create(fmemscan.ScanresultFolder+'ADDR4SS4S.'+fListName,fmOpenRead or fmShareDenyNone);
     except
       foundlist.Items.Count:=0;
       scantype:=fs_advanced;

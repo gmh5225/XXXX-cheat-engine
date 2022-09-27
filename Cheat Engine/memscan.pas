@@ -7646,10 +7646,10 @@ begin
           owningmemscan.postScanState:=psSavingFirstScanResults;
 
         //  outputdebugstring('ScanController: This was a first scan, so saving the First Scan results');
-         // outputdebugstring('to:'+OwningMemScan.ScanresultFolder+'ADDRESSES.First');
+         // outputdebugstring('to:'+OwningMemScan.ScanresultFolder+'ADDR4SS4S.First');
 
           {$IFDEF LOWMEMORYUSAGE}
-          copyfile(OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP', OwningMemScan.ScanresultFolder+'ADDRESSES.First');
+          copyfile(OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP', OwningMemScan.ScanresultFolder+'ADDR4SS4S.First');
           copyfile(OwningMemScan.ScanresultFolder+'M4m0ry.TMP', OwningMemScan.ScanresultFolder+'M4m0ry.First')
           {$else}
           OwningMemScan.SaveFirstScanThread:=TSaveFirstScanThread.create(OwningMemScan.ScanresultFolder, false,@OwningMemScan.memregion,@OwningMemScan.memregionpos, OwningMemScan.previousMemoryBuffer);
@@ -7895,7 +7895,7 @@ begin
   savedresults.Delete(i);
 
   DeleteFile(pchar(fScanResultFolder+'M4m0ry.'+resultname));
-  DeleteFile(pchar(fScanResultFolder+'ADDRESSES.'+resultname));
+  DeleteFile(pchar(fScanResultFolder+'ADDR4SS4S.'+resultname));
   result:=true;
 end;
 
@@ -7927,7 +7927,7 @@ begin
 
   //copy the current scanresults to memory.savedscan and addresses.savedscan
   CopyFile(pchar(fScanResultFolder+'M4m0ry.TMP'), pchar(fScanResultFolder+'M4m0ry.'+resultname), false,false);
-  CopyFile(pchar(fScanResultFolder+'ADDR4SS4S.TMP'), pchar(fScanResultFolder+'ADDRESSES.'+resultname), false, false);
+  CopyFile(pchar(fScanResultFolder+'ADDR4SS4S.TMP'), pchar(fScanResultFolder+'ADDR4SS4S.'+resultname), false, false);
 
   savedresults.Add(resultname);
 

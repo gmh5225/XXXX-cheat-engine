@@ -5515,7 +5515,7 @@ begin
   try
 
     oldAddressFile:=TFileStream.Create(scandir+'ADDR4SS4S.TMP',fmOpenRead or fmShareDenyNone);
-    oldMemoryFile:=TFileStream.Create(scandir+'MEMORY.TMP',fmOpenRead or fmShareDenyNone);
+    oldMemoryFile:=TFileStream.Create(scandir+'M4m0ry.TMP',fmOpenRead or fmShareDenyNone);
 
     //set the current index to startentry
 
@@ -5758,7 +5758,7 @@ begin
       {$ifdef lowmemoryusage}
       //use the previousmemoryfile
       //the memory.tmp file must have been generated with the correct size before calling this
-      previousmemoryfile:=Tfilestream.create(scandir+'MEMORY.TMP', fmOpenWrite or fmShareDenyNone);
+      previousmemoryfile:=Tfilestream.create(scandir+'M4m0ry.TMP', fmOpenWrite or fmShareDenyNone);
 
       memorybuffer:=virtualAlloc(nil,maxregionsize,MEM_COMMIT or MEM_RESERVE or MEM_TOP_DOWN	, PAGE_READWRITE);
       {$else}
@@ -7103,7 +7103,7 @@ begin
     {$ifdef lowmemoryusage}
     //create a file to store the previous memory in
     OutputDebugString(format('Creating a memory.tmp file : %dKB',[totalProcessMemorySize div 1024]));
-    f:=Tfilestream.Create(OwningMemScan.ScanresultFolder+'MEMORY.TMP', fmCreate);
+    f:=Tfilestream.Create(OwningMemScan.ScanresultFolder+'M4m0ry.TMP', fmCreate);
     f.Size:=totalProcessMemorySize;
     f.free;
 
@@ -7478,7 +7478,7 @@ begin
           freeandnil(scanners[i].MemoryFile);
 
       deletefile(scanners[0].Memoryfilename);
-      renamefile(OwningMemScan.ScanresultFolder+'MEMORY.TMP', scanners[0].Memoryfilename);
+      renamefile(OwningMemScan.ScanresultFolder+'M4m0ry.TMP', scanners[0].Memoryfilename);
     end;
     {$endif}
 
@@ -7500,13 +7500,13 @@ begin
 
         //memory
         deletefile(OwningMemScan.ScanresultFolder+'M4m0ry.UNDO');
-        renamefile(OwningMemScan.ScanresultFolder+'MEMORY.TMP',OwningMemScan.ScanresultFolder+'M4m0ry.UNDO');
-        renamefile(scanners[0].Memoryfilename, OwningMemScan.ScanresultFolder+'MEMORY.TMP');
+        renamefile(OwningMemScan.ScanresultFolder+'M4m0ry.TMP',OwningMemScan.ScanresultFolder+'M4m0ry.UNDO');
+        renamefile(scanners[0].Memoryfilename, OwningMemScan.ScanresultFolder+'M4m0ry.TMP');
 
 
         try
           AddressFile:=TFileStream.Create(OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP',fmOpenWrite or fmShareDenyNone);
-          MemoryFile:=TFileStream.Create(OwningMemScan.ScanresultFolder+'MEMORY.TMP',fmOpenWrite or fmsharedenynone);
+          MemoryFile:=TFileStream.Create(OwningMemScan.ScanresultFolder+'M4m0ry.TMP',fmOpenWrite or fmsharedenynone);
         except
           raise exception.create(rsErrorWhenWhileLoadingResult+' ('+OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP'+')');
         end;
@@ -7650,7 +7650,7 @@ begin
 
           {$IFDEF LOWMEMORYUSAGE}
           copyfile(OwningMemScan.ScanresultFolder+'ADDR4SS4S.TMP', OwningMemScan.ScanresultFolder+'ADDRESSES.First');
-          copyfile(OwningMemScan.ScanresultFolder+'MEMORY.TMP', OwningMemScan.ScanresultFolder+'MEMORY.First')
+          copyfile(OwningMemScan.ScanresultFolder+'M4m0ry.TMP', OwningMemScan.ScanresultFolder+'M4m0ry.First')
           {$else}
           OwningMemScan.SaveFirstScanThread:=TSaveFirstScanThread.create(OwningMemScan.ScanresultFolder, false,@OwningMemScan.memregion,@OwningMemScan.memregionpos, OwningMemScan.previousMemoryBuffer);
           {$ENDIF}
@@ -7894,7 +7894,7 @@ begin
 
   savedresults.Delete(i);
 
-  DeleteFile(pchar(fScanResultFolder+'MEMORY.'+resultname));
+  DeleteFile(pchar(fScanResultFolder+'M4m0ry.'+resultname));
   DeleteFile(pchar(fScanResultFolder+'ADDRESSES.'+resultname));
   result:=true;
 end;
@@ -7926,7 +7926,7 @@ begin
 
 
   //copy the current scanresults to memory.savedscan and addresses.savedscan
-  CopyFile(pchar(fScanResultFolder+'MEMORY.TMP'), pchar(fScanResultFolder+'MEMORY.'+resultname), false,false);
+  CopyFile(pchar(fScanResultFolder+'M4m0ry.TMP'), pchar(fScanResultFolder+'M4m0ry.'+resultname), false,false);
   CopyFile(pchar(fScanResultFolder+'ADDR4SS4S.TMP'), pchar(fScanResultFolder+'ADDRESSES.'+resultname), false, false);
 
   savedresults.Add(resultname);
@@ -7943,10 +7943,10 @@ begin
 
   if canUndo then
   begin
-    deletefile(fScanResultFolder+'MEMORY.TMP');
+    deletefile(fScanResultFolder+'M4m0ry.TMP');
     deletefile(fScanResultFolder+'ADDR4SS4S.TMP');
 
-    renamefile(fScanResultFolder+'M4m0ry.UNDO',fScanResultFolder+'MEMORY.TMP');
+    renamefile(fScanResultFolder+'M4m0ry.UNDO',fScanResultFolder+'M4m0ry.TMP');
     renamefile(fScanResultFolder+'Addr4ss4s.UNDO',fScanResultFolder+'ADDR4SS4S.TMP');
   end;
 end;

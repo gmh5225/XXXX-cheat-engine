@@ -782,7 +782,7 @@ object MemoryBrowser: TMemoryBrowser
       OnClick = miHVFollowClick
     end
     object Search1: TMenuItem
-      Caption = 'Search memory...'
+      Caption = 'Search M4m0ry...'
       ImageIndex = 9
       ShortCut = 16454
       OnClick = Search1Click

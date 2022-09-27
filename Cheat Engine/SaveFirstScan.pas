@@ -55,8 +55,8 @@ begin
 
 
   try
-    oldAddressFile:=TFileStream.Create(folder+'ADDRESSES.TMP', fmopenread or fmShareDenyNone);
-    oldMemoryFile:=TFileStream.Create(folder+'MEMORY.TMP', fmopenread or fmShareDenyNone);
+    oldAddressFile:=TFileStream.Create(folder+'ADDR4SS4S.TMP', fmopenread or fmShareDenyNone);
+    oldMemoryFile:=TFileStream.Create(folder+'M4m0ry.TMP', fmopenread or fmShareDenyNone);
 
     if terminated then exit;
 
@@ -66,8 +66,8 @@ begin
     begin
       //the scan was a unknown initial value scan, so the memory is stored in memory and not on the disk
       //save the memoryregions and memory to disk
-      NewAddressFile:=TFileStream.Create(folder+'ADDRESSES.FIRST', fmCreate);
-      NewMemoryFile:=TFileStream.Create(folder+'MEMORY.FIRST', fmCreate);
+      NewAddressFile:=TFileStream.Create(folder+'ADDR4SS4S.FIRST', fmCreate);
+      NewMemoryFile:=TFileStream.Create(folder+'M4m0ry.FIRST', fmCreate);
 
       newAddressfile.WriteBuffer(datatype,sizeof(datatype));
 
@@ -86,9 +86,9 @@ begin
       //exact value scan or other scan that gives addresses
       //copy the results to addressesfirst.tmp and memoryfirst.tmp
 
-      copyfile(pchar(folder+'ADDRESSES.TMP'),pchar(folder+'ADDRESSES.FIRST'),false);
+      copyfile(pchar(folder+'ADDR4SS4S.TMP'),pchar(folder+'ADDR4SS4S.FIRST'),false);
       if terminated then exit;
-      copyfile(pchar(folder+'MEMORY.TMP'),pchar(folder+'MEMORY.FIRST'),false);
+      copyfile(pchar(folder+'M4m0ry.TMP'),pchar(folder+'M4m0ry.FIRST'),false);
     end;
 
   finally

@@ -771,7 +771,7 @@ begin
 
 
     try
-      SavedScanmemoryFS:=Tfilestream.Create(scandir+'MEMORY.'+savedresultsname,fmOpenRead or fmsharedenynone);
+      SavedScanmemoryFS:=Tfilestream.Create(scandir+'M4m0ry.'+savedresultsname,fmOpenRead or fmsharedenynone);
       getmem(SavedScanmemory, maxregionsize+512); //extra just to be safe for custom types that misreport size
     except
       raise ESavedScanException.Create(rsNoFirstScanDataFilesFound);

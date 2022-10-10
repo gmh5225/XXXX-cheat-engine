@@ -167,6 +167,9 @@ var
 
   allocsAddToUnexpectedExceptionList: boolean;
 
+  WarnOnNearbyAllocationFailure: boolean=true; //not saved in settings. Inconvenience the user every fucking time they restart (Learn to use 14 byte jmps people)
+  NearbyAllocationFailureFatal: boolean=true;
+
   {$ifdef darwin}
   speedhack_HookMachAbsoluteTime:boolean;
   {$endif}
@@ -187,8 +190,15 @@ var
   skippdb: boolean;
 
 
+  systemSupportsIntelPT: boolean=false;
+  useintelptfordebug: boolean;
+  inteliptlogfindwhatroutines: boolean;
+  maxiptconfigsize: integer;
+  hideiptcapability: boolean; //in case it's unstable and you really really do not wish to accidentally use it
+
 
 implementation
+
 
 end.
 

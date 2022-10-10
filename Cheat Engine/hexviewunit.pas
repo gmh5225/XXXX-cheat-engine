@@ -65,7 +65,6 @@ type
   THexView=class(TCustomPanel)
   private
     MemoryMap: TMap;
-    MemoryMapItterator: TMapIterator;
 
     verticalscrollbar: TScrollbar;
     mbCanvas: TPaintbox;
@@ -926,11 +925,15 @@ begin
     case key of
       VK_DELETE:
       begin
-        if isediting and (fDisplayType in [dtByteDec, dtWordDec, dtDwordDec, dtQwordDec, dtSingle, dtDouble, dtCustom]) then
-          HandleEditKeyPress(chr(7)); //there's no delete char and I can't be assed to change the whole function to tak a virtual key
+        if shift=[] then
+        begin
+          if isediting and (fDisplayType in [dtByteDec, dtWordDec, dtDwordDec, dtQwordDec, dtSingle, dtDouble, dtCustom]) then
+            HandleEditKeyPress(chr(7)); //there's no delete char and I can't be assed to change the whole function to tak a virtual key
 
-        key:=0;
-        exit;
+          key:=0;
+
+          exit;
+        end;
       end;
 
       VK_BACK:
@@ -947,15 +950,21 @@ begin
         end
         else
         begin
-          key:=0;
-          back;
+          if shift=[] then
+          begin
+            key:=0;
+            back;
+          end;
         end;
       end;
 
       VK_SPACE:
       begin
-        key:=0;
-        follow;
+        if shift=[] then
+        begin
+          key:=0;
+          follow;
+        end;
       end;
 
       VK_ESCAPE:
@@ -1920,9 +1929,8 @@ var
     x: ptrUint;
 begin
   a:=a and (not $fff);
-  if MemoryMapItterator.Locate(a) then
-    result:=MemoryMapItterator.DataPtr
-  else
+  result:=memorymap.GetDataPtr(a);
+  if result=nil then
   begin
     //get memory page info
     p.baseaddress:=a;
@@ -1937,9 +1945,13 @@ begin
     else
       p.inModule:=false;
 
-    memorymap.Add(a, p);
-    MemoryMapItterator.Locate(a);
-    result:=MemoryMapItterator.DataPtr;
+{$ifdef asserthexviewisthreadsafe}
+    if mainthreadid<>getcurrentthreadid then raise exception.create('Do not touch the hexview from other threads');
+{$endif}
+    if memorymap.HasId(a)=false then
+      memorymap.Add(a, p);
+
+    result:=memorymap.GetDataPtr(a);
   end;
 end;
 
@@ -3125,7 +3137,7 @@ function THexview.ReadProcessMemory(hProcess: THandle; lpBaseAddress, lpBuffer: 
 begin
 
   if fcr3=0 then
-    result:={$ifdef windows}newkernelhandler.{$endif}{$ifdef darwin}macport.{$endif}ReadProcessMemory(hProcess, lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead)
+    result:=newkernelhandler.ReadProcessMemory(hProcess, lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead)
   {$ifdef windows}
   else
     result:=ReadProcessMemoryCR3(fcr3,lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesRead)
@@ -3135,7 +3147,7 @@ end;
 function THexview.WriteProcessMemory(hProcess: THandle; const lpBaseAddress: Pointer; lpBuffer: Pointer; nSize: DWORD; var lpNumberOfBytesWritten: PTRUINT): BOOL;
 begin
   if fcr3=0 then
-    result:={$ifdef windows}newkernelhandler.{$endif}{$ifdef darwin}macport.{$endif}WriteProcessMemory(hProcess, lpBaseAddress, lpBuffer, nSize, lpNumberOfBytesWritten)
+    result:=newkernelhandler.WriteProcessMemory(hProcess, lpBaseAddress, lpBuffer, nSize, lpNumberOfBytesWritten)
   {$ifdef windows}
   else
     result:=WriteProcessMemoryCR3(fcr3, lpBaseAddress, lpBuffer, nsize, lpNumberOfBytesWritten)
@@ -3146,7 +3158,7 @@ end;
 function THexview.VirtualQueryEx(hProcess: THandle; lpAddress: Pointer; var lpBuffer: TMemoryBasicInformation; dwLength: DWORD): DWORD;
 begin
   if fcr3=0 then
-    result:={$ifdef windows}newkernelhandler.{$endif}{$ifdef darwin}macport.{$endif}VirtualQueryEx(hProcess, lpAddress, lpBuffer, dwLength)
+    result:=newkernelhandler.VirtualQueryEx(hProcess, lpAddress, lpBuffer, dwLength)
   {$ifdef windows}
   else
   begin
@@ -3199,9 +3211,6 @@ begin
   if offscreenbitmap<>nil then
     freeandnil(offscreenbitmap);
 
-  if MemoryMapItterator<>nil then
-    freeandnil(memorymapitterator);
-
   if MemoryMap<>nil then
     freeandnil(memorymap);
 
@@ -3237,7 +3246,6 @@ begin
   DoubleBuffered:=true; // http://cheatengine.org/mantis/view.php?id=280 , no effect for me, but should help those with no theme
 
   MemoryMap:=TMap.create(ituPtrSize, sizeof(TPageinfo));
-  MemoryMapItterator:=TMapIterator.create(MemoryMap);
 
   changelist:=TChangelist.create;
 

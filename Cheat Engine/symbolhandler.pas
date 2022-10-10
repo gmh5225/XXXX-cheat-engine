@@ -21,7 +21,7 @@ uses
   NewKernelHandler,syncobjs, SymbolListHandler, fgl, typinfo, cvconst, PEInfoFunctions,
   DotNetPipe, DotNetTypes, commonTypeDefs, math, LazUTF8, contnrs, LazFileUtils,
   db, sqldb, sqlite3dyn, sqlite3conn, registry, symbolhandlerstructs, forms, controls,
-  AvgLvlTree
+  AvgLvlTree,contexthandler
   {$ifdef darwin}
   ,macportdefines
   {$endif};
@@ -4516,6 +4516,10 @@ begin
     for i:=0 to modulelistpos-1 do
       if (address>=modulelist[i].baseaddress) and (address<modulelist[i].baseaddress+modulelist[i].basesize) then
       begin
+        if modulelist[i].is64bitmodule=false then
+        asm
+        nop
+        end;
         mi:=modulelist[i];
 
         result:=true;
@@ -4917,6 +4921,8 @@ var mi: tmoduleinfo;
     v64: qword;
 
     mr: TMemoryrecord;
+    contexthandler: TContextInfo;
+    reg: PContextElement_register;
 
     function ApplyTokenType(value: qword): qword;
     begin
@@ -4935,8 +4941,10 @@ var mi: tmoduleinfo;
 
       nextTokenType:=ttQword; //reset to default
     end;
-begin
 
+
+begin
+  contexthandler:=nil;
   nexttokentype:=ttQword;
   pointerstartpos:=0;
   pointerstartmax:=16;
@@ -5032,7 +5040,29 @@ begin
               end;
             end;
 
+            if (not shallow) and (context<>nil) then
+            begin
+              if contexthandler=nil then
+                contexthandler:=getBestContextHandler;
+
+              {$ifdef darwin}
+              outputdebugstring('is '+tokens[i]+' a register?');
+              {$endif}
+              reg:=contexthandler.getRegister(tokens[i]);
+              if reg<>nil then
+              begin
+                tokens[i]:=inttohex(reg^.getValue(context),8);
+                {$ifdef darwin}
+                outputdebugstring('yes: '+tokens[i]);
+                {$endif}
+                continue;
+              end;
+            end;
+
+
+
             {$IFDEF windows}
+            (*
             if not shallow then
               regnr:=getreg(uppercase(tokens[i]),false)
             else
@@ -5125,7 +5155,7 @@ begin
               hasError:=true;
               exit(0);
             end
-            else
+            else      *)
             {$ENDIF}
             begin
               //no context or not a register
@@ -5805,6 +5835,12 @@ begin
                 else
                 begin
                   newmodulelist[newmodulelistpos].is64bitmodule:=processhandler.is64Bit;
+
+                  if newmodulelist[newmodulelistpos].is64bitmodule=false then
+                  asm
+                  nop
+                  end;
+
                   if pos('/system/',lowercase(x))=1 then //android thingy
                     newmodulelist[newmodulelistpos].isSystemModule:=true;
 

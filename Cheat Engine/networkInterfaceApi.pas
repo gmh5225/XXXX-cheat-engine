@@ -6,18 +6,19 @@ interface
 
 uses
   {$ifdef windows}
-  jwawindows,
+  jwawindows, windows,
   {$endif}
+  Classes, SysUtils, networkInterface, NewKernelHandler, CEFuncProc
   {$ifdef JNI}
-    Classes, SysUtils, networkinterface, unixporthelper, newkernelhandler;
+  ,unixporthelper, newkernelhandler;
   {$else}
   {$ifdef darwin}
-  mactypes, macport,
+  ,mactypes, macport, macportdefines, dialogs;
   {$endif}
   {$ifdef windows}
-  windows, dialogs,
+  ,dialogs;
   {$endif}
-  Classes, SysUtils, networkinterface, newkernelhandler, CEFuncProc;
+
   {$endif}
 
 
@@ -48,7 +49,7 @@ function NetworkGetRegionInfo(hProcess: THandle; lpAddress: Pointer; var lpBuffe
 implementation
 
 {$ifndef jni}
-uses networkConfig, syncobjs2, plugin;
+uses networkConfig, syncobjs2, plugin, controls;
 {$endif}
 
 resourcestring
@@ -60,12 +61,14 @@ threadvar connection: TCEConnection;
 
 var threadManagerIsHooked: boolean=false;
     oldendthread: TEndThreadHandler;
+    quitQuestionActive: boolean;
 
 function getConnection: TCEConnection;
 var s: string;
 begin
   //OutputDebugString('getConnection');
   result:=nil;
+  if quitQuestionActive then exit(nil);
 
   if {$ifndef jni}networkconfig.{$endif}host.s_addr<>0 then
   begin
@@ -75,11 +78,12 @@ begin
       OutputDebugString('connection=nil. creating');
       disconnect;
 
+
+
       connection:=TCEConnection.create;
       if connection.connected then
       begin
         result:=connection;
-
 
         {$ifdef THREADNAMESUPPORT}
         s:=getthreadname;
@@ -88,7 +92,21 @@ begin
         {$endif}
       end
       else
+      begin
+
+        if MainThreadID=GetCurrentThreadId then
+        begin
+          //ask to disconnect
+          quitQuestionActive:=true;
+          if MessageDlg('The ceserver seems to be gone. Stop trying to reconnect?', mtConfirmation,[mbyes,mbno],0)=mryes then
+            networkconfig.host.s_addr:=0;
+
+          quitQuestionActive:=false;
+
+        end;
+
         OutputDebugString('connection.connected=false');
+      end;
 
     end
     else
@@ -377,8 +395,6 @@ var tm: TThreadManager;
 begin
   //hook the threadmanager if it hasn't been hooked yet
 
-  {$ifdef windows}
-
   OutputDebugString('InitializeNetworkInterface');
 
   if NetworkVersion(versionname)<2 then
@@ -409,9 +425,6 @@ begin
   m.Code:=@NetworkApiPointerChange;
   m.Data:=nil;
   onAPIPointerChange:=tnotifyevent(m);
-
-
-  {$endif}
 
 end;
 

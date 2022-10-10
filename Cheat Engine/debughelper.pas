@@ -15,13 +15,15 @@ uses
   foundcodeunit, debugeventhandler, CEFuncProc, newkernelhandler, comctrls,
   debuggertypedefinitions, formChangedAddresses, frmTracerUnit, VEHDebugger,
   DebuggerInterfaceAPIWrapper, DebuggerInterface,symbolhandler,
-  fgl, disassembler, NetworkDebuggerInterface, Clipbrd, commonTypeDefs ,BreakpointTypeDef{$ifdef darwin},  macportdefines{$endif};
+  fgl, disassembler, NetworkDebuggerInterface, Clipbrd, commonTypeDefs ,
+  BreakpointTypeDef,iptnative{$ifdef darwin},  macportdefines{$endif};
 
 {$warn 4056 off}
 
 
 type
 
+  EDebuggerAttachException=class(Exception);
 
   TDebuggerthread = class(TThread)
   private
@@ -49,6 +51,9 @@ type
 
 
     fcurrentThread: TDebugThreadHandler;
+    hasfetchediptlog: boolean;
+
+
     globalDebug: boolean; //kernelmode debugger only
 
     fRunning: boolean;
@@ -61,7 +66,21 @@ type
     pid: THandle;
 
     GUIObjectToFree: TObject;
+
+    {$ifdef windows}
+    fetchediptlog: boolean;
+
+    fulliptlog: PIPT_TRACE_DATA;
+    fulliptlogsize: dword;
+    {$endif}
+
+
+    launchanyhow: boolean;
+    {$ifdef windows}
+    usesipt: boolean;
+    {$endif}
     procedure sync_FreeGUIObject;
+    procedure vmwareRunningAskLaunch;
 
 
     procedure DBVMSteppingLost(sender: TObject);
@@ -153,11 +172,20 @@ type
     procedure startBranchMapper(tidlist: tlist=nil);
     procedure stopBranchMapper;
 
+    {$ifdef windows}
+    function initIntelPTTracing: boolean;
+    procedure stopIntelPTTracing;
+
+    function getLastIPT(var log: pointer; var size: integer): boolean;
+    {$endif}
     property CurrentThread: TDebugThreadHandler read getCurrentThread write setCurrentThread;
     property NeedsToSetEntryPointBreakpoint: boolean read fNeedsToSetEntryPointBreakpoint;
     property running: boolean read fRunning;
 
     property usesGlobalDebug: boolean read globalDebug;
+    {$ifdef windows}
+    property usingIPT: boolean read usesipt;
+    {$endif}
 
     procedure Terminate;
     procedure Execute; override;
@@ -244,6 +272,9 @@ resourcestring
   rsDepSettingTimeout = 'Timeout while trying to set DEP policy. Continue with'
     +' the breakpoint?';
   rsDebuggerAttachAborted = 'Debugger attach aborted';
+  rsVMWareIsRunningIPTBAD = 'VMWare seems to be running. It''s known that some'
+    +' versions of vmware will cause a BSOD in combination with intel IPT. Do '
+    +'you still want to use intel IPT?';
 
 procedure TDebuggerthread.Execute;
 var
@@ -334,6 +365,11 @@ begin
 
       debugging := True;
 
+      {$IFDEF WINDOWS}
+      if systemSupportsIntelPT and useintelptfordebug then
+        initIntelPTTracing;
+      {$ENDIF}
+
 
       while (not terminated) and debugging do
       begin
@@ -341,7 +377,11 @@ begin
         execlocation:=1;
 
         if CurrentDebuggerInterface.needsToAttach=false then
-          OnAttachEvent.SetEvent; //no need to wait if the debufferinterface does not need to wait
+          OnAttachEvent.SetEvent; //no need to wait if the debuggerinterface does not need to wait
+
+        {$IFDEF WINDOWS}
+        fetchediptlog:=false;
+        {$ENDIF}
 
 
         if WaitForDebugEvent(debugEvent, 100) then
@@ -389,6 +429,12 @@ begin
 
   finally
     outputdebugstring('End of debugger');
+
+    {$IFDEF WINDOWS}
+    if usesipt then
+      StopProcessIptTracing(processhandle);
+    {$ENDIF}
+
     if currentprocesid <> 0 then
       debuggerinterfaceAPIWrapper.DebugActiveProcessStop(currentprocesid);
 
@@ -864,8 +910,9 @@ begin
             case breakpoint.breakpointTrigger of
               bptExecute: //bcr
               begin
-                bcr:=@currentthread.arm64context.debugstate.bcr[breakpoint^.debugRegister];
-                bvr:=@currentthread.arm64context.debugstate.bvr[breakpoint^.debugRegister];
+
+                bcr:=@PARM64CONTEXT(currentthread.context)^.debugstate.bcr[breakpoint^.debugRegister];
+                bvr:=@PARM64CONTEXT(currentthread.context)^.debugstate.bvr[breakpoint^.debugRegister];
 
                 bvr^:=breakpoint^.address;
                 bcr^.bits.enabled:=1; // 0..1;    //0 - 0=off, 1=on
@@ -882,8 +929,8 @@ begin
 
               bptAccess, bptWrite:  //wcr
               begin
-                wcr:=@currentthread.arm64context.debugstate.wcr[breakpoint^.debugRegister];
-                wvr:=@currentthread.arm64context.debugstate.wvr[breakpoint^.debugRegister];
+                wcr:=@PARM64CONTEXT(currentthread.context)^.debugstate.wcr[breakpoint^.debugRegister];
+                wvr:=@PARM64CONTEXT(currentthread.context)^.debugstate.wvr[breakpoint^.debugRegister];
 
                 wvr^:=breakpoint^.address;
                 wcr^.bits.enabled:=1;
@@ -1284,8 +1331,8 @@ begin
           if processhandler.is64Bit then
           begin
             case breakpoint.breakpointTrigger of
-              bptExecute: currentthread.arm64context.debugstate.bcr[breakpoint^.debugRegister].bits.enabled:=0;
-              bptAccess, bptWrite: currentthread.arm64context.debugstate.wcr[breakpoint^.debugRegister].bits.enabled:=0;
+              bptExecute: PARM64CONTEXT(currentthread.context)^.debugstate.bcr[breakpoint^.debugRegister].bits.enabled:=0;
+              bptAccess, bptWrite: PARM64CONTEXT(currentthread.context)^.debugstate.wcr[breakpoint^.debugRegister].bits.enabled:=0;
             end;
           end;
           currentthread.setContext(cfDebug);
@@ -1341,8 +1388,8 @@ begin
               if processhandler.is64Bit then
               begin
                 case breakpoint.breakpointTrigger of
-                  bptExecute: currentthread.arm64context.debugstate.bcr[breakpoint^.debugRegister].bits.enabled:=0;
-                  bptAccess, bptWrite: currentthread.arm64context.debugstate.wcr[breakpoint^.debugRegister].bits.enabled:=0;
+                  bptExecute: PARM64CONTEXT(currentthread.context)^.debugstate.bcr[breakpoint^.debugRegister].bits.enabled:=0;
+                  bptAccess, bptWrite: PARM64CONTEXT(currentthread.context)^.debugstate.wcr[breakpoint^.debugRegister].bits.enabled:=0;
                 end;
               end;
               currentthread.setContext(cfDebug);
@@ -1925,6 +1972,143 @@ begin
   //it doesn't really matter if it returns false, that would just mean the breakpoint got and it's tracing or has finished tracing
 end;
 
+{$ifdef windows}
+function TDebuggerThread.initIntelPTTracing: boolean;
+var
+  options: IPT_OPTIONS;
+  size: dword;
+  sizeadjust: integer;
+begin
+  result:=false;
+  if hideiptcapability then exit;
+
+  if useintelptfordebug then
+  begin
+
+    if ce_getProcessIDFromProcessName('vmware-vmx.exe')<>0 then
+    begin
+      launchanyhow:=false;
+      if MainThreadID=GetCurrentThreadId then
+        vmwareRunningAskLaunch
+      else
+        synchronize(vmwareRunningAskLaunch);
+
+      if not launchanyhow then exit;
+    end;
+
+    sizeadjust:=0;
+
+    options.AsUlongLong:=0;
+    options.flags.OptionVersion:=1;
+
+    repeat
+      StopProcessIptTracing(processhandle);
+      options.flags.TopaPagesPow2:=maxiptconfigsize-sizeadjust;
+      if StartProcessIptTracing(processhandle, options) then
+      begin
+        if GetProcessIptTraceSize(processhandle, size) then
+        begin
+          usesipt:=true;
+          exit(true);
+        end;
+
+        inc(sizeadjust);
+
+      end
+      else exit(false); //failure activating
+    until (sizeadjust>maxiptconfigsize);
+  end;
+end;
+
+procedure TDebuggerThread.stopIntelPTTracing;
+begin
+  StopProcessIptTracing(processhandle);
+end;
+
+
+function TDebuggerThread.getLastIPT(var log: pointer; var size: integer): boolean;
+//get a direct pointer to the debuggerthread's current log. (fetches the log if it hasn't done so yet)
+
+var
+  tracesize: dword;
+  h: PIPT_TRACE_HEADER;
+  last: qword;
+  i: integer;
+  loopcount: integer;
+begin
+  result:=false;
+
+  if usesipt=false then exit;
+
+  if fcurrentThread<>nil then
+  begin
+    if not fetchediptlog then
+    begin
+      loopcount:=0;
+      while not fetchediptlog do
+      begin
+        if GetProcessIptTraceSize(processhandle, tracesize)=false then
+        begin
+          initIntelPTTracing; //reinit. It may get a smaller size. perhaps next time more luck
+          exit;
+        end;
+
+
+        if (fulliptlog=nil) or (tracesize>fulliptlogsize) then
+        begin
+          if (fulliptlog<>nil) then
+            FreeMemAndNil(fulliptlog);
+
+          getmem(fulliptlog, tracesize);
+          if fulliptlog=nil then exit;
+
+          fulliptlogsize:=tracesize;
+        end;
+
+        fetchediptlog:=GetProcessIptTrace(processhandle, fulliptlog, tracesize);
+
+        if not fetchediptlog then
+        begin
+          inc(loopcount);
+          if loopcount>10 then exit; //fuck it, something is broken
+        end;
+      end;
+    end;
+
+    //parse the log for this thread
+    h:=@fulliptlog^.TraceData[0];
+    last:=ptruint(@fulliptlog^.TraceData[0])+fulliptlog^.TraceSize;
+
+    while ptruint(h)<last do
+    begin
+      if h^.ThreadId=fcurrentthread.ThreadId then
+      begin
+        if (log=nil) or (memsize(log)<h^.tracesize) then
+        begin
+          if log<>nil then
+            freemem(log);
+
+          getmem(log, h^.TraceSize);
+        end;
+
+        size:=h^.tracesize;
+        copymemory(log, @h^.Trace[h^.RingBufferOffset], size-h^.RingBufferOffset);
+        copymemory(log+(size-h^.RingBufferOffset), @h^.Trace[0], h^.RingBufferOffset);
+        exit(True);
+      end;
+
+      if h^.tracesize=0 then break;
+      h:=PIPT_TRACE_HEADER(ptruint(@h^.Trace[0])+h^.tracesize);
+    end;
+
+  end
+  else
+    exit;
+
+end;
+
+ {$endif}
+
 procedure TDebuggerThread.startBranchMapper(tidlist: TList=nil);
 var
   i,j: integer;
@@ -1962,6 +2146,7 @@ begin
   for i:=0 to ThreadList.count-1 do
     TDebugThreadHandler(threadlist[i]).StopBranchMap;
 end;
+
 
 function TDebuggerThread.CodeFinderStop(codefinder: TFoundCodeDialog): boolean;
 var
@@ -2959,7 +3144,7 @@ begin
       frmDebuggerAttachTimeout.free;
 
       if mresult=mrAbort then
-        raise exception.create(rsDebuggerAttachAborted);
+        raise EDebuggerAttachException.create(rsDebuggerAttachAborted);
 
       if mresult=mrok then break;
 
@@ -3036,6 +3221,11 @@ procedure TDebuggerthread.sync_FreeGUIObject;
 begin
   GUIObjectToFree.Free;
   GUIObjectToFree:=nil;
+end;
+
+procedure TDebuggerthread.vmwareRunningAskLaunch;
+begin
+  launchanyhow:=MessageDlg(rsVMWareIsRunningIPTBAD, mtWarning, [mbyes, mbno], 0)=mryes;
 end;
 
 procedure TDebuggerthread.defaultConstructorcode;
@@ -3149,6 +3339,12 @@ begin
   end;
 
 
+  {$IFDEF WINDOWS}
+  if fulliptlog<>nil then
+    freememandnil(fulliptlog);
+  {$ENDIF}
+
+
   if OnAttachEvent <> nil then
   begin
     OnAttachEvent.SetEvent;
@@ -3175,6 +3371,8 @@ begin
 
   if eventhandler <> nil then
     FreeAndNil(eventhandler);
+
+
 
   inherited Destroy;
 end;

@@ -32,7 +32,7 @@ Ported to pascal by Eric Heijnen 2022
 interface
 
 uses
-  Classes, SysUtils, Windows;
+  Classes, SysUtils{$ifdef darwin},ctypes, macport{$endif}{$ifdef windows}, Windows{$endif};
 
 
   const
@@ -282,7 +282,7 @@ uses
   {$error invalid size of IPT_OUTPUT_BUFFER}
   {$endif}
 
-
+  {$ifdef windows}
 //
 // IOCTLs that the IPT Driver Handles
 //
@@ -295,7 +295,7 @@ const
   METHOD_NEITHER       =           3;
   FILE_DEVICE_UNKNOWN  =           $00000022;
 
-  IOCTL_IPT_REQUEST = ((FILE_DEVICE_UNKNOWN) shl 16) or ((FILE_ANY_ACCESS) shl 14) or ((1) << 2) or (METHOD_BUFFERED);
+  IOCTL_IPT_REQUEST = ((FILE_DEVICE_UNKNOWN) shl 16) or ((FILE_ANY_ACCESS) shl 14) or ((1) shl 2) or (METHOD_BUFFERED);
   IOCTL_IPT_READ_TRACE = ((FILE_DEVICE_UNKNOWN) shl 16) or ((FILE_ANY_ACCESS) shl 14) or ((1) shl 2) or (METHOD_OUT_DIRECT);
 
 procedure InitializeIptBuffer(out input: IPT_INPUT_BUFFER;  InputType: IPT_INPUT_TYPE);
@@ -313,9 +313,11 @@ function PauseThreadIptTracing(hThread: THandle; out r: BOOLEAN): boolean;
 function ResumeThreadIptTracing(hThread: THandle; out r: BOOLEAN): boolean;
 
 function ConfigureThreadAddressFilterRange(hThread: THandle; dwRangeIndex: DWORD; dwRangeConfig: IPT_FILTER_RANGE_SETTINGS; ullStartAddress: QWORD; ullEndAddress: QWORD): boolean;
+{$endif}
 
 implementation
 
+{$ifdef windows}
 procedure InitializeIptBuffer(out input: IPT_INPUT_BUFFER;  InputType: IPT_INPUT_TYPE);
 begin
   zeromemory(@input, sizeof(input));
@@ -467,7 +469,7 @@ begin
     inputBuffer.GetProcessIptTrace.ProcessHandle:=hProcess;
 
     result:=DeviceIoControl(hIpt,
-                            IOCTL_IPT_REQUEST,
+                            IOCTL_IPT_READ_TRACE,
                             @inputBuffer,
                             sizeof(inputBuffer),
                             pTrace,
@@ -659,6 +661,10 @@ begin
     closehandle(hIpt);
   end;
 end;
+
+{$endif}
+
+finalization
 
 end.
 

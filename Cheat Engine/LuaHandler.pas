@@ -1581,7 +1581,9 @@ function CheckIfConditionIsMetContext(threadid: dword; context: PContext; script
 {
 precondition: script returns a value (so already has the 'return ' part appended for single line scripts)
 }
-var i: integer;
+var
+  i: integer;
+  s: string;
 begin
   result:=false;
   try
@@ -1592,6 +1594,11 @@ begin
       i:=lua_gettop(LuaVM);
       if i=1 then //valid return
         result:=lua_toboolean(LuaVM, -1);
+    end
+    else
+    begin
+      s:=Lua_ToString(LuaVM,-1);
+      outputdebugstring('CheckIfConditionIsMetContext error:' +s);
     end;
   finally
     lua_pop(LuaVM, lua_gettop(luavm));
@@ -8680,22 +8687,26 @@ function TNewProcess.RunCommandLoop(out outputstring:string;
       stderrlength:=0;
       Execute;
 
+      {$ifdef windows}
       while WaitForSingleObject(FProcessHandle,0)=WAIT_TIMEOUT do
-        begin
-          // Only call ReadFromStream if Data from corresponding stream
-          // is already available, otherwise, on  linux, the read call
-          // is blocking, and thus it is not possible to be sure to handle
-          // big data amounts bboth on output and stderr pipes. PM.
-          gotoutput:=ReadInputStream(output,BytesRead,OutputLength,OutputString,1);
-          // The check for assigned(P.stderr) is mainly here so that
-          // if we use poStderrToOutput in p.Options, we do not access invalid memory.
-          gotoutputstderr:=false;
-          if assigned(stderr) then
-              gotoutputstderr:=ReadInputStream(StdErr,StdErrBytesRead,StdErrLength,StdErrString,1);
+      {$else}
+      while running do
+      {$endif}
+      begin
+        // Only call ReadFromStream if Data from corresponding stream
+        // is already available, otherwise, on  linux, the read call
+        // is blocking, and thus it is not possible to be sure to handle
+        // big data amounts bboth on output and stderr pipes. PM.
+        gotoutput:=ReadInputStream(output,BytesRead,OutputLength,OutputString,1);
+        // The check for assigned(P.stderr) is mainly here so that
+        // if we use poStderrToOutput in p.Options, we do not access invalid memory.
+        gotoutputstderr:=false;
+        if assigned(stderr) then
+            gotoutputstderr:=ReadInputStream(StdErr,StdErrBytesRead,StdErrLength,StdErrString,1);
 
-         { if (porunidle in options) and not gotoutput and not gotoutputstderr and Assigned(FOnRunCommandEvent) Then
-            FOnRunCommandEvent(self,Nil,RunCommandIdle,'');  }
-        end;
+       { if (porunidle in options) and not gotoutput and not gotoutputstderr and Assigned(FOnRunCommandEvent) Then
+          FOnRunCommandEvent(self,Nil,RunCommandIdle,'');  }
+      end;
       // Get left output after end of execution
 
 
@@ -15852,6 +15863,69 @@ begin
   exit(0);
 end;
 
+{$ifdef darwin}
+function lua_createMachThread(L: Plua_State):integer; cdecl;
+var
+  address: qword;
+  createdThread: thread_act_t;
+  ca64: TARM64CONTEXT;
+
+  stack: pointer;
+  i: integer;
+begin
+  result:=0;
+  if lua_gettop(L)>=1 then
+  begin
+    address:=lua_tointeger(L,1);
+
+    stack:=VirtualAllocEx(processhandle,nil,64*1024,MEM_RESERVE or MEM_COMMIT, PAGE_READWRITE);
+    if stack=nil then
+    begin
+      lua_pushnil(L);
+      lua_pushstring(L,'stack creation failure');
+      exit(2);
+    end;
+    if macport.thread_create(processhandle, createdThread)=0 then
+    begin
+
+
+      //createdThread is an unintialized thread, init it
+      //c.ContextFlags:=CONTEXT_ALL;
+      //GetThreadContext(createdThread, c);
+      if processhandler.SystemArchitecture=archArm then
+      begin
+        ca64.ContextFlags:=MACAARCH64_CONTEXT_ALL;
+        macport.GetThreadContextArm64(createdThread,ca64);
+        ca64.SP:=ptruint(stack)+64*1024-1;
+        ca64.SP:=ca64.SP and $ffffffffffffff80;    //128 bit alignment
+        ca64.PC:=address;
+
+        macport.SetThreadContextArm64(createdThread, ca64);
+
+        i:=ResumeThread(createdThread);
+
+        lua_pushinteger(L,i);
+        lua_pushinteger(L, createdThread);
+        exit(2);
+      end
+      else
+      begin
+        //x86.
+      end;
+    end
+    else
+    begin
+      lua_pushnil(L);
+      lua_pushstring(L,'thread_create failure');
+      exit(2);
+    end;
+
+
+  end;
+
+end;
+{$endif}
+
 procedure InitLimitedLuastate(L: Plua_State);
 begin
   //don't put functioncallback events in here, as limited luastates can be destroyed
@@ -15992,6 +16066,10 @@ begin
 
   lua_register(L, 'deleteAllRegisteredSymbols', lua_deleteAllUserdefinedSymbols);
 
+
+{$ifdef darwin}
+  lua_register(L, 'createMachThread', lua_createMachThread);
+{$endif}
 
 
 end;
